@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+=======
 # Compiled class file
 *.class
 
@@ -21,3 +28,4 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+>>>>>>> 62bf7e6a808052f1d012e7af8a3c0d00b33c5815
