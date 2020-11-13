@@ -1,0 +1,20 @@
+Viikko3
+
+Aloitin kurssin vasta tällä viikolla joten aika on mennyt paljolti kiinni ottamisessa. Aiheena on siis labyrinttien ja verkkojen luonti
+ja niiden polunetsintä. Tavoitteena on tehdä ainakin yksinkertainen numeroilla tehty labyrintti (jonka sain tällä viikolla 
+jo jonkinlaiseen malliin) sekä painotettu verkko, ja soveltaa niihin reitinetsintää. Ajatuksena on tietenkin löytää halvin (labyrintillä
+vähiten siirtymisiä, verkolla pienin reitin summa) reitti, mutta labyrintillä voisi myös vertailla, millä algoritmillä löytää minkä tahansa reitin
+mahdollisimman nopeasti. Ajatuksena on siis soveltaa ainakin DFS, BFS ja A-star-algoritmejä ja vertailla tuloksia.
+
+Jos projekti etenee sujuvasti, teen myös labyrinttejä joissa pitää löytää esimerkiksi 5-maalipistettä yhden päästä päähän-labyrintin sijaan. 
+Tällä hetkellä suunnitelma on viilata numeroista koostuva labyrintti ja sen testit kuntoon ja sitten tehdä sille polunetsintäohjelma. 
+Tämänhetkinen ratkaisu on tehdä taulukko taulukoista-tyyppinen matriisi ja antaa sille javan random-kirjaston (sanokaa suoraan, jos tätä ei ole sallittu) avulla seiniä, ja sitten varmistaa, että sillä
+on ulkoseinät siellä missä pitääkin ja että alku ja loppu ovat toimivia. Tavoitteena on myös tehdä labyrinttejä, joissa alku ja loppu eivät ole aina päädyissä,
+mutta priorisoin ensin perusrakennetta.
+
+Javataidot ovat aika ruosteessa, joten melko suuri osa koodista on vain sen kanssa lämmittelyä, ja katsoin parhaaksi jättää testaamatta näitä osia. Tämän takia koodi on myös hieman
+sekalaista, mutta idea on siirtää Dst:n labyrintti omaan tiedostoonsa ilman, että sen luonti jakautuu moneen metodiin. Tällä hetkellä labyrintistä voi helposti tulla
+mahdoton, mutta se ei välttämättä ole täysi dealbreaker.
+
+Tiedän että checkstyle puuttuu kokonaan ja testikattavuus on melko heikko jopa niistä osista, joita pitäisi testata. Yritän ottaa loput kiinni seuraavaan palautukseen mennessä. Kaikki palaute tervetullutta, erityisesti
+labyrintin generoimiseen liittyen (toimiiko randomin käyttö, saako sitä käyttää jne). index-html on jacocon testiraportti, joka on lievästi sanottuna kevyttä lukemista. En ole varma miten se pitäisi saada mukaan githubiin oikeaoppisesti.

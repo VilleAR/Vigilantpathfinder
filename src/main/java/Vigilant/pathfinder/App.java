@@ -9,10 +9,13 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-        int b =5;
-        System.out.println(b*b);
-        Dst dst= new Dst();
-        System.out.println(dst);
+
+        Dst dst= new Dst(17);
+        //Dst d=new Dst(2);
+        //System.out.println(d.testMap());
+        //System.out.println(dst);
+        //***0=polku,1=alku,2=seinä,3=loppu***
+        dst.testMap(); //luo labyrintin
+        dst.testFt(); //tulostaa labyrintin 
     }
 }
