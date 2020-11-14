@@ -1,0 +1,15 @@
+Aiheena on labyrinttien ja verkkojen generointi ja niiden polunetsintä. Valitsin aiheen, koska halusin opetella labyrinttien ja verkkojen generointia ja
+reitinetsintäalgoritmit ovat minulle kiinnostavia. Haluan myös opetella joitain pelien koodaamiseen liittyviä asioita, ja tämä tuntui hyvältä kompromissilta.
+Pelkkä luolastojen generointi tai polunetsintäalgoritmien vertailu tuntui hieman liian laihalta aiheelta, mutta tämä saattaa olla liikaa toiseen suuntaan.
+Ohjelma ei vielä saa mitään käyttäjän syötteitä, mutta myöhemmin labyrintin tyyppi ja koko. Generointi on 
+ainakin vielä täysin itse keksimiä keinoja käyttäen (siltä se varmasti näyttääkin), reitinetsinnässä tulen käyttämään DFS, BFS ja A-star-algoritmejä, joiden
+aikavaativuuksiksi on listattu O(V+E). Tavoitteena on tietenkin, että omat toteutukseni vastaavat tätä. Definition of donea on tässä vaiheessa vaikea sanoa,
+riippuu siitä kuinka paljon jumiudun eri asioihin. Miniminä labyrintin ja verkon generointi ja DFS, BFS, A-star toteutukset.
+
+Lähteet:
+http://en.wikipedia.org/wiki/Maze_generation_algorithm
+http://rosettacode.org/wiki/Maze_generation#Java
+
+Opinto-ohjelma: tietokäsittelytieteen kandidaatti
+
+Kieli: Suomi 

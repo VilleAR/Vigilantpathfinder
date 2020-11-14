@@ -18,3 +18,4 @@ mahdoton, mutta se ei välttämättä ole täysi dealbreaker.
 
 Tiedän että checkstyle puuttuu kokonaan ja testikattavuus on melko heikko jopa niistä osista, joita pitäisi testata. Yritän ottaa loput kiinni seuraavaan palautukseen mennessä. Kaikki palaute tervetullutta, erityisesti
 labyrintin generoimiseen liittyen (toimiiko randomin käyttö, saako sitä käyttää jne). index-html on jacocon testiraportti, joka on lievästi sanottuna kevyttä lukemista. En ole varma miten se pitäisi saada mukaan githubiin oikeaoppisesti.
+
