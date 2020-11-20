@@ -27,9 +27,9 @@ private int size;
     public void createMaze() {
         //0 on sein‰, 1 on polkua, 2 on tilaa jota ei oikeasti ole olemassa (eli ei polkua)
         //otamme aloituspisteeksi labyrintin vasemman yl‰osan (lopuksi t‰m‰ on varmaankin satunnainen piste)
+        int totalcells = size*size; //t‰ll‰ muistamme solujen m‰‰r‰n. tarvitsemme t‰t‰ tiet‰‰ksemme, milloin algoritmi on k‰ynyt kaikissa soluissa
         size=size*2-1;
-        int hf =0;
-        int walls[]=new int[size];
+        int hf =0; //muutan t‰m‰n satunnaiseksi soluksi jossain kohtaa
         for (int i=0;i<size;i++){
             for (int j=0;j<size;j++) {
                 if (i%2==0) {
@@ -65,18 +65,24 @@ private int size;
         }
         */
         maze[hf][hf]=1;
-        List<Pair> marked= new List<Pair>(size);
+        List<Pair> walls= new List<Pair>(size);
         List<Pair> visited = new List<Pair>(size*size);
-        Pair p1=new Pair(hf+2, hf);
-        marked.add(p1);
-        p1=new Pair(hf, hf+2);
-        marked.add(p1);
+        Pair p1=new Pair(hf+1, hf);
+        walls.add(p1);
+        p1=new Pair(hf, hf+1);
+        walls.add(p1);
         Pair current=new Pair(hf, hf); 
         visited.add(current);
-        
-        while (visited.size<size*size) {
+        //alamme rakentamaan labyrintti‰
+        /* ei toimi viel‰, j‰‰ looppiin
+        while (visited.size<totalcells) {
+            int next=walls.getRand(); //otamme satunnaisen solun merkityist‰
+            Pair nx = walls.get(next);
+            
+            walls.remove(next);
             
         }
+*/
         
 
     }
