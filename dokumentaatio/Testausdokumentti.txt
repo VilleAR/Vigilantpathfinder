@@ -1,0 +1,8 @@
+Projekti jakautuu tässä vaiheessa (viikko4) kahteen osaan: tietorakenteisiin ja algoritmeihin. Tietorakenteet ovat melko staattisia,
+ja niiden toiminta on testattu. Algoritmit muuttuvat ja jäävät pois vielä niin tiuhaan tahtiin, että niiden testaamisessa ei ole paljon järkeä.
+Kun labyrintin generointi on valmis, sen testaamista voisi tehdä esimerkiksi tarkistamalla, onko sillä ainakin joku reitti. Vastaavasti polunetsintä-
+algoritmeille voisi tehdä omat labyrinttinsä, joihin niitä voi testata. Itse algoritmien vertailussa todennäköisesti generoidaan hyvin useita labyrinttejä,
+ja mitataan algoritmien vauhtia kaikkien selvittämisessä.
+
+Tietorakenteista on testattu miltei kaikki vähääkään monimutkaisempi (esim. size-funktiota ei testata) ja moni näistä on laitettu samaan funktioon testien selaamisen
+helpottamiseksi. Testit toimivat gradlessa gradle test-toiminnolla.

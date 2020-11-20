@@ -1,0 +1,13 @@
+Viikkoraportti 4----------------
+
+Tällä viikolla pääsin itse projektin aiheessa enimmäkseen vain taaksepäin. Halusin tehdä labyrintin generoinnin hyvin,
+joten aloitin sen alusta ja tein sille tietorakenteita joita tulen tarvitsemaan myös muissa osissa (list, stack ja pair, joka on pakollinen
+matriisien elementtien käsittelemiseen). Tajusin myös, että kaikki labyrinttien generoimisalgoritmit käsittelevät labyrinttejä, joka jakautuu polkuun
+ja seiniin, eikä polkuun ja esteisiin niin kuin alunperin halusin, joten vaihdoin suunnitelmaa ja tein omasta labyrintistä samanlaisen.
+testFt():llä tulostuva labyrintti esittää nyt soluja ja niiden välissä olevia seiniä. Seuraavassa kuvassa vasemmalla oleva käsittelemätön labyrintti
+(jossa siis ei vielä ole polkuja solujen välillä) on esitetty numeroina oikealla.
+https://imgur.com/a/AGx0qkR
+1 ovat soluja, 0 seiniä ja 2 liitoskohtia seinien välillä, joihin ei voi liikkua. 
+Tällä hetkellä olen implementoimassa Primin algoritmiä, mutta se on edelleen työn alla. Sen jälkeen alan tekemään polunetsintä-algoritmejä, joiden uskon ja toivon
+onnistuvan suhteellisen nopeasti. En ole varma oliko labyrintin generoinnin aloittaminen alusta paras ratkaisu, mutta sen mukana tulleet tietorakenteet tulevat
+varmasti tarpeen.
