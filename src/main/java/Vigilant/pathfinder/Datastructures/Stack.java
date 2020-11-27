@@ -9,23 +9,31 @@ import java.util.Random; //tilapäinen ratkaisu
  *
  * @author panda
  */
-public class Stack {
+public class Stack<T> {
     //teemme itse stackin koodausta varten
-    private int arr[];
+    //stack on palautuksessa 5 muutettu objektityyppiseksi
+    private Object arr[];
     private int top;
+    
     public Stack(int s) {
-        arr=new int [s];
+        arr=new Object[s];
         this.arr=arr;
         this.top=top;
     }
-    public void push(int j) {
-        arr[++top] = j;
+    public void push(T t) {  
+        arr[++top] = t;
     }
-    public int pop() {
-        return arr[top--];
+    public T pop() {
+        return (T) arr[top--];
     }
-    public int peek() {
-        return arr[top];
+    public Pair spop() {
+        if(top==0) {
+            System.out.println("stack empty");
+        }
+        return (Pair) arr[top--];
+    }
+    public T peek() {
+        return (T) arr[top];
     }
     public boolean isEmpty() { //melko turha
         return (top == -1);

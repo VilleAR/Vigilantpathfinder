@@ -1,0 +1,14 @@
+Viikkoraportti 5----------
+
+Primin algoritmi taitaa nyt toimia. Muutin myös Stackin yleisempään muotoon ja sain DFS:n toiminnan tehtyä. Reitin takaisinkävely
+olisi vielä mukava saada, ja siirtymisten laskemisessa taitaa olla vielä jotain häikkää, mutta itse polunetsintä toimii. 
+Uskon ja toivon että BFS ja A-star onnistuvat melko helposti ensimmäisen algoritmin tekemisen jälkeen. Niiden tekemisen jälkeen alan joko vertailemaan
+niiden tehokkuutta, tekemään uusia labyrinttejä eri algoritmeillä (esim. rekursiivinen generointi) tai alan tekemään verkkoja. Ainakin jonkinlainen 
+vertailu olisi hyvä saada aikaiseksi.
+
+Tein tällä viikolla tasan 0 uutta testiä ja en implementoinut CircleCOta, joten testit ovat varmaan ensi viikon ensimmäinen prioriteetti. Tulen testaamaan
+polunetsintäalgoritmejä valmiilla labyrintillä, josta tiedän, miten kunkin algoritmin tulisi se selvittää. Tämän labyrintin koosta en vielä ole varma,
+isompi on tietenkin parempi mutta myös hankalampi implementoida. En ole myöskään vielä ihan perillä siitä, miten labyrintin generoimista voisi testata.
+
+Äärettömien kiireiden takia ehdin tehdä tätä tällä viikolla vain perjantaina, ja study.cs.helsinki.fi ei toiminut sitä kokeillessani (n. illasta yöhön),
+joten en ole vielä pystynyt lukemaan viime viikon palautetta tai saamaan vertaisarvioitavia projekteja.

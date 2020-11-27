@@ -15,6 +15,7 @@ import java.util.Random; //tilapäinen
 public class List<T> {
     private Object arr[];
     public int size=0;
+    
     public List(int s) {
         arr=new Object[s];
         size=this.size;

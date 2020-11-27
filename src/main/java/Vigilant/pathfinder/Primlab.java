@@ -152,7 +152,10 @@ private int size;
         }
         return l;
     }
-    public void testFt() {
+    public int[][] getMaze() { //palauttaa labyrintin matriisina
+        return maze;
+    }
+    public void testFt() { // tulostaa labyrintin
         int n = size;
         for (int j=0; j<n;j++) {
             for (int i=0; i<n ;i++) {
