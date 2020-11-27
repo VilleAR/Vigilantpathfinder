@@ -25,7 +25,7 @@ private int size;
         
     }
     public void createMaze() {
-        //0 on sein‰, 1 on polkua, 2 on tilaa jota ei oikeasti ole olemassa (eli ei polkua)
+        //0 on sein‰, 1 on solmu, 2 on avoin polku solmujen v‰liss‰ (eli ei sein‰‰), 9 on tilaa jota ei oikeasti ole olemassa (eli ei polkua)
         //otamme aloituspisteeksi labyrintin vasemman yl‰osan (lopuksi t‰m‰ on varmaankin satunnainen piste)
         int totalcells = size*size; //t‰ll‰ muistamme solujen m‰‰r‰n. tarvitsemme t‰t‰ tiet‰‰ksemme, milloin algoritmi on k‰ynyt kaikissa soluissa
         size=size*2-1;
@@ -38,7 +38,7 @@ private int size;
                     }
                 } else {
                     if (j%2!=0) {
-                        maze[i][j]=2;
+                        maze[i][j]=9;
                     }
                 }
             }
@@ -74,17 +74,83 @@ private int size;
         Pair current=new Pair(hf, hf); 
         visited.add(current);
         //alamme rakentamaan labyrintti‰
-        /* ei toimi viel‰, j‰‰ looppiin
-        while (visited.size<totalcells) {
+        int zz = 0;
+        while (!walls.isEmpty()) {
+            /*
+            if (zz>500) {
+                System.out.println("walls:" + walls.size);
+                break;
+            }
+            zz++;
+            */
             int next=walls.getRand(); //otamme satunnaisen solun merkityist‰
-            Pair nx = walls.get(next);
-            
+            Pair nx = walls.get(next); 
+           // System.out.println("rand; "+next);
+            //System.out.println("nxcoords: "+nx.p1 + "," + nx.p2);
             walls.remove(next);
+            //boolean foundnew=false;
+            if (nx.p1%2==0) { //jos sein‰ on pystysuora
+                Pair lc=new Pair(nx.p1,nx.p2-1); //sein‰n vasemmalla oleva solu
+                Pair rc = new Pair(nx.p1, nx.p2+1);//sein‰n oikealla oleva solu
+                if (!visited.contains(lc)) { //selvitet‰‰n, onko toinen soluista k‰ym‰tt‰ ja jos on, kumpi
+                    maze[nx.p1][nx.p2]=2;
+                    current=lc;
+                    visited.add(current); //tehd‰‰n tutkitusta solusta nykyinen solu ja lis‰t‰‰n se k‰ytyihin
+                    walls=findWalls(walls, current); //lis‰t‰‰n uuden solun sein‰t listaan
+                } else if (!visited.contains(rc)) {
+                    maze[nx.p1][nx.p2]=2;
+                    current=rc;
+                    visited.add(current);
+                    walls=findWalls(walls, current);
+                } 
+            } else { //sein‰ on vaakasuora
+                Pair uc=new Pair(nx.p1-1, nx.p2); //sein‰n yl‰puolella oleva solu
+                Pair dc = new Pair(nx.p1+1, nx.p2); //sein‰n alapuolella oleva solu
+                if (!visited.contains(uc)) { //teemme saman kuin pystysuorille seinille
+                     maze[nx.p1][nx.p2]=2;
+                     current=uc;
+                     visited.add(current);
+                     walls=findWalls(walls,current);
+                } else if(!visited.contains(dc)) {
+                    maze[nx.p1][nx.p2]=2;
+                    current=dc;
+                    visited.add(current);
+                    walls=findWalls(walls,current);
+                }
+                
+            }
+          //  System.out.println(current.p1+", "+current.p2);
+          //  System.out.println(walls.size);
+          
             
         }
-*/
-        
-
+    }
+    public List findWalls(List<Pair> l, Pair c) { //lis‰‰ walls-listaan solun viereiset sein‰t
+        if (c.p1>0) {
+            Pair p = new Pair(c.p1-1,c.p2);
+            if (!l.contains(p)) {
+                l.add(p);
+            }          
+        }
+        if (c.p1<size-1) {
+            Pair p = new Pair(c.p1+1, c.p2);
+            if (!l.contains(p)) {
+                l.add(p);
+            } 
+        }
+        if (c.p2>0) {
+            Pair p=new Pair(c.p1, c.p2-1);
+            if (!l.contains(p)) {
+                l.add(p);
+            } 
+        }
+        if (c.p2<size-1) {
+            Pair p = new Pair(c.p1, c.p2+1);
+            if (!l.contains(p)) {
+                l.add(p);
+            } 
+        }
+        return l;
     }
     public void testFt() {
         int n = size;

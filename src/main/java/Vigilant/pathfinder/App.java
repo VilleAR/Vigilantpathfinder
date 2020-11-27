@@ -10,20 +10,11 @@ public class App {
     }
 
     public static void main(String[] args) {
-        /*
-        Primlab prim = new Primlab(3);
+        
+        Primlab prim = new Primlab(17);
         prim.createMaze();
         prim.testFt();
-        */
-        List<Pair> lp=new List<Pair>(5);
-        Pair p1=new Pair(1,2);
-        Pair p2 = new Pair(1,2);
-        lp.add(p1);
-        System.out.println(lp.contains(p2));
-     
         
-        
-       
       
     }
 }

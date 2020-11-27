@@ -48,7 +48,12 @@ public class List<T> {
     }   
     public int getRand() {
         Random r = new Random();
-        return r.nextInt(size-1);
+        if (size==1) {
+            return 0;
+        } else {
+            return r.nextInt(size-1);
+        }
+        
     }
     public Pair getPair(int n) { //parien sisältymistä varten tehty funktio, ainoa tapa jolla sain toimimaan
         return (Pair) arr[n];
@@ -61,6 +66,13 @@ public class List<T> {
             }
         }
         return false;
+    }
+    public boolean isEmpty() {
+        if (size==0) {
+            return true;
+        } else {
+            return false;
+        }
     }
     
 }
