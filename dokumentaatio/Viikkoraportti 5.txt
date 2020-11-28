@@ -10,5 +10,8 @@ Tein tällä viikolla tasan 0 uutta testiä ja en implementoinut CircleCOta, jot
 polunetsintäalgoritmejä valmiilla labyrintillä, josta tiedän, miten kunkin algoritmin tulisi se selvittää. Tämän labyrintin koosta en vielä ole varma,
 isompi on tietenkin parempi mutta myös hankalampi implementoida. En ole myöskään vielä ihan perillä siitä, miten labyrintin generoimista voisi testata.
 
+Labyrinttiä on ehkä vähän vaikea lukea edelleen. Yritän ehkä jossain kohtaa parantaa graafista esitystä niin, että se muistuttaa ascii-taidetta.
+1 on siis solmu, 2 on polkua, 0 estettä ja 9 "filler"-tilaa, jota ei oikeasti ole olemassa mutta jota tarvitaan labyrintin esittämiseen matriisina.
+
 Äärettömien kiireiden takia ehdin tehdä tätä tällä viikolla vain perjantaina, ja study.cs.helsinki.fi ei toiminut sitä kokeillessani (n. illasta yöhön),
 joten en ole vielä pystynyt lukemaan viime viikon palautetta tai saamaan vertaisarvioitavia projekteja.
