@@ -19,7 +19,7 @@ public class App {
         int maze[][]=prim.getMaze(); //returnaa labyrintin matriisina
         DFS dfs = new DFS(maze);
         dfs.search(); //etsii polun
-        dfs.testFt(); //tulostaa labyrintin
+        dfs.testFt(); //tulostaa labyrintin, voisi hyvin k‰ytt‰‰ samaa funktiota primill‰.
         
       
     }

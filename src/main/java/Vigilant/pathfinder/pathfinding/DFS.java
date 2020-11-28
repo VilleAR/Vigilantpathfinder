@@ -27,7 +27,7 @@ public class DFS {
         stack = new Stack(10000000); //mahdolliset vierailtavat solmut
         this.maze=maze;
         int n = maze[0].length-1;
-        boolean visited[][] = new boolean[n+1][n+1]; //k‰yt‰mme boolean matriisia pit‰m‰‰n kirjaa k‰ydyist‰ solmuista, paljon nopeampi kuin aiempi ratkaisu
+        boolean visited[][] = new boolean[n+1][n+1]; //k‰yt‰mme boolean matriisia pit‰m‰‰n kirjaa k‰ydyist‰ solmuista, paljon nopeampi kuin aiempi ratkaisu (aiempi ratkaisu oli hyvin huono)
         this.visited=visited;
     }
     public int search() {
@@ -36,7 +36,7 @@ public class DFS {
         Pair end = new Pair(n-1,n-1);
         for (int i=0;i<n;i++) {
             for (int j=0;j<n;j++) {
-                visited[i][j]=false; //taitaa olla t‰ysin turha setup
+                visited[i][j]=false; //taitaa olla t‰ysin turha setup mutta havainnollistaa toimintaa (ehk‰)
             }
         }
         visited[0][0]=true;
@@ -103,7 +103,7 @@ public class DFS {
         }
     }
     
-    public void testFt() { // tulostaa labyrintin
+    public void testFt() { // tulostaa labyrintin, aika turha koska primlabill‰ sama
         int n = maze[0].length-1;
         for (int j=0; j<n;j++) {
             for (int i=0; i<n ;i++) {
