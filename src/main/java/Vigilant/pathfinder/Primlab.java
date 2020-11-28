@@ -17,10 +17,13 @@ public class Primlab {
 private int arr[];    
 public int maze[][];
 private int size; 
+private boolean vis[][];
     public Primlab(int size) {
         this.size=size;
         int adjsize=size*2-1; //kasvatamme labyrintin kokoa, jotta saamme seinät väliin
         int maze[][]=new int[adjsize+1][adjsize+1];
+        boolean vis[][]=new boolean[adjsize+1][adjsize+1];
+        this.vis=vis;
         this.maze=maze;
         
     }
@@ -43,36 +46,22 @@ private int size;
                 }
             }
         }
-        //näillä taulukoilla pidämme kirjaa hf:n naapureista
-        /*
-        int hr=hf;
-        int hc=hf;
-        Stack str=new Stack(size); //naapurin rivinumero
-        Stack stc=new Stack(size); //naapurin kolumninumero
-        str.push(hr);
-        stc.push(hc-1);
-        str.push(hr-1);
-        stc.push(hc);
-        str.push(hr+1);
-        stc.push(hc);
-        str.push(hr);
-        stc.push(hc+1);
-        
-        while (!stc.isEmpty()) {
-            int a=str.pop();
-            int b = stc.pop();
-            maze[a][b]=1;
-        }
-        */
+
         maze[hf][hf]=1;
         List<Pair> walls= new List<Pair>(size);
-        List<Pair> visited = new List<Pair>(size*size);
+       // List<Pair> visited = new List<Pair>(size*size);
         Pair p1=new Pair(hf+1, hf);
         walls.add(p1);
         p1=new Pair(hf, hf+1);
         walls.add(p1);
         Pair current=new Pair(hf, hf); 
-        visited.add(current);
+        for (int i=0;i<size;i++) {
+            for (int j=0;j<size;j++) {
+                vis[i][j]=false; //taitaa olla täysin turha setup mutta havainnollistaa toimintaa (ehkä)
+            }
+        }
+        vis[0][0]=true;
+        //visited.add(current);
         //alamme rakentamaan labyrinttiä
         int zz = 0;
         while (!walls.isEmpty()) {
@@ -92,33 +81,33 @@ private int size;
             if (nx.p1%2==0) { //jos seinä on pystysuora
                 Pair lc=new Pair(nx.p1,nx.p2-1); //seinän vasemmalla oleva solu
                 Pair rc = new Pair(nx.p1, nx.p2+1);//seinän oikealla oleva solu
-                if (!visited.contains(lc)) { //selvitetään, onko toinen soluista käymättä ja jos on, kumpi
+                if (vis[lc.p1][lc.p2]==false) { //selvitetään, onko toinen soluista käymättä ja jos on, kumpi
                     maze[nx.p1][nx.p2]=2;
-                    current=lc;
-                    visited.add(current); //tehdään tutkitusta solusta nykyinen solu ja lisätään se käytyihin
+                    current=lc;                 
+                    //visited.add(current); //tehdään tutkitusta solusta nykyinen solu ja lisätään se käytyihin
                     walls=findWalls(walls, current); //lisätään uuden solun seinät listaan
-                } else if (!visited.contains(rc)) {
+                } else if (vis[rc.p1][rc.p2]==false) {
                     maze[nx.p1][nx.p2]=2;
                     current=rc;
-                    visited.add(current);
+                    //visited.add(current);
                     walls=findWalls(walls, current);
                 } 
             } else { //seinä on vaakasuora
                 Pair uc=new Pair(nx.p1-1, nx.p2); //seinän yläpuolella oleva solu
                 Pair dc = new Pair(nx.p1+1, nx.p2); //seinän alapuolella oleva solu
-                if (!visited.contains(uc)) { //teemme saman kuin pystysuorille seinille
+                if (vis[uc.p1][uc.p2]==false) { //teemme saman kuin pystysuorille seinille
                      maze[nx.p1][nx.p2]=2;
                      current=uc;
-                     visited.add(current);
+                     //visited.add(current);
                      walls=findWalls(walls,current);
-                } else if(!visited.contains(dc)) {
+                } else if(vis[dc.p1][dc.p2]==false) {
                     maze[nx.p1][nx.p2]=2;
                     current=dc;
-                    visited.add(current);
+                    //visited.add(current);
                     walls=findWalls(walls,current);
-                }
-                
+                }  
             }
+            vis[current.p1][current.p2]=true;
           //  System.out.println(current.p1+", "+current.p2);
           //  System.out.println(walls.size);
           

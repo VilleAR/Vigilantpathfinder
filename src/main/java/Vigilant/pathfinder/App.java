@@ -13,13 +13,13 @@ public class App {
 
     public static void main(String[] args) {
         
-        Primlab prim = new Primlab(17);
+        Primlab prim = new Primlab(177);
         prim.createMaze(); //luo labyrintin
         //prim.testFt();
         int maze[][]=prim.getMaze(); //returnaa labyrintin matriisina
         DFS dfs = new DFS(maze);
-        dfs.search(); //etsii polun
-        dfs.testFt(); //tulostaa labyrintin, voisi hyvin k‰ytt‰‰ samaa funktiota primill‰.
+        System.out.println(dfs.search()); //etsii polun
+        //dfs.testFt(); //tulostaa labyrintin, voisi hyvin k‰ytt‰‰ samaa funktiota primill‰.
         
       
     }

@@ -68,11 +68,12 @@ public class DFS {
             Pair p = stack.spop();
             System.out.println(p.p1+", "+p.p2);
         }
-*/
+*/      /*
         System.out.println("moves made: (start at 0,0) ");
         for (int i=0;i<lp.size;i++) {
             System.out.println(lp.get(i).p1 + ", "+ lp.get(i).p2);
         }
+*/
         return moves-1;
     }
     public void getPaths(Pair p) { // käytännössä sama idea kuin primlabin walls-funktio, eli lisää stackiin solmusta mahdolliset polut
