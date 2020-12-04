@@ -1,0 +1,2 @@
+Tällä viikolla tein queuen ja BFS:n ja aloitin A-staria ja omaa Random-luokkaa. Tein myös testit BFS:lle ja DFS:lle ja testasin niiden toimintaa käytännössä. 
+Implementoin CircleCIn ja Codecovin, mutta ne eivät vielä toimi. CircleCIn päivittäminen mahdollisesti korjaa ongelman. Lisätietoa näistä testausdokumentissa.
