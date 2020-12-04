@@ -9,6 +9,8 @@ package Vigilant.pathfinder.Datastructures;
  *
  * @author panda
  */
+//hyvät ideat tulevat tarpeeseen
+//onko random tietorakenne vai ei? ei taida olla
 public class Random {
     
     public long getRand(int x) {

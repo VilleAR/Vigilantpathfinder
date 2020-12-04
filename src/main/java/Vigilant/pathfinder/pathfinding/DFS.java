@@ -50,18 +50,23 @@ public class DFS {
         }
         List<Pair> lp = new List<Pair>(500); //debuggaamista varten
         //-------------------------------------------------------- while loop
+        int v = 0;
         while (stack.size()>0) {          
             Pair p=stack.spop(); //parien poppaamista helpottava funktio
             current=p;
             //lp.add(current);
             moves++;
             if (current.equals(end)) {
+                v++;
                 System.out.println("DFS found path in " + moves + " moves. Not bad! (Unless this number is very high)");
                 break;
             }
             getPaths(current);  //etsimme solmun yhteydet 
             visited[current.p1][current.p2]=true;
                   
+        }
+        if (v==0) {
+            System.out.println("No path found!");
         }
         /*
         while (stack.size()>0) {

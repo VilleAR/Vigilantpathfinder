@@ -44,17 +44,22 @@ public class BFS {
         }
         List<Pair> lp = new List<Pair>(500); //debuggaamista varten
         //-------------------------------------------------------- while loop
+        int v = 0;
         while (!queue.isEmpty()) {          
             Pair p=queue.getPair(); //parien poppaamista helpottava funktio
             current=p;
             //lp.add(current);
             moves++;
             if (current.equals(end)) {
+                v++;
                 System.out.println("BFS found path in " + moves + " moves. It did its best.");
                 break;
             }
             getPaths(current);  //etsimme solmun yhteydet 
             visited[current.p1][current.p2]=true;       
+        }
+        if (v==0) {
+            System.out.println("No path found! Uh oh!");
         }
         /* debuggausta varten
         for (int i =0;i<lp.size;i++) {

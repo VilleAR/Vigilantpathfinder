@@ -1,3 +1,34 @@
+
+Viikko 6:
+
+DFS ja BFS on testattu tekemällä käsin labyrintti. Piirsin labyrintin ensiksi käsin ja simuloin siihen BFS:n ja DFS:n toimintaa, ja vertasin testeissä ohjelmien antamia
+siirtymien määriä itse saamiini. Labyrintti näkyy tässä:
+https://imgur.com/a/dFd2DgI
+Oletuksena on, että jos moves-parametri on oikein, loputkin luokasta toimii halutusti.
+Tämän lisäksi myös Queue-rakenne on testattu sekä integerillä että objektilla. Työn alla olevia luokkia (Astar, Random, Priorityqueue) ei vielä testata.
+Loput tietorakenteista on testattu aiemmin. Primin labyrintin testaaminen on vähän hankalampaa, ja se on tapahtunut enimmäkseen generoimalla lukuisia labyrinttejä ja tutkimalla
+niitä itse. CircleCI ja Codecov on nyt lisätty, mutta Codecov ei tätä kirjoittaessa vielä toimi, koska CircleCIn testit herjaavat kaikista koodin kommenteissa(!) olevista ääkkösistä,
+jolloin Codecov ei tietenkään suostu ottamaan testejä katseltaviksi. Tähän en ole vielä keksinyt ratkaisua, ääkkösten poistaminen kommenteista tekisi koodista vielä vaikeaselkoisempaa.
+Codecov-linkki siltä varalta että olen sen korjannut: 
+https://app.codecov.io/gh/VilleAR/Vigilantpathfinder/commits
+
+******************************************************
+Algoritmien testaus:
+Tämä osio käsittelee siis algoritmien nopeuksien vertaamista. Tässä kohtaa testattavina on vain yksi generointialgoritmi (Prim) ja kaksi polunetsintäalgoritmia (BFS ja DFS).
+Primin algoritmi, kuten useimmat muutkin labyrinttien generoimisalgoritmit, tekee monia pieniä umpikujia, jotka eivät rankaise DFS:n toimintaa liian pahasti. Tämä myös tarkoittaa,
+että oikea reitti on usein myös pisin mahdollinen, minkä takia BFS joutuu melkein aina käymään läpi liki jokaisen solmun. On siis sanomattakin selvää, että DFS on Primin algoritmin
+labyrinteille aina nopeampi. Teen kattavammat testit myöhemmin, kun löytyy enemmän testattavaa, mutta testasin nyt yhtä 999*999 solmun labyrinttiä DFS:llä ja BFS:llä seuraavasti:
+https://imgur.com/a/77N2xHi
+System.currentTimeMillis() ilmoittaa siis senhetkisen ajan, eli suorittamalla se joka tehtävän (generoiminen, reitinlöytäminen) jälkeen ja laskemalla erotuksen saamme tehtävään kuluneen ajan. 
+getMaze() mitataan siltä varalta, että se veisi liian paljon aikaa (se ei vie). "Time after -----" pitäisi tietenkin olla "Time it took for -----", koska laskemme erotuksia. Labyrintin generoimiseen
+meni siis noin 77.8s, BFS:ään 6.6s ja DFS:ään 0.067s. BFS:n hitatuteen vaikuttavat sen tehottomuuden lisäksi sen käyttämä tietorakenne queue, joka on raskaampi kuin DFS:n stack.
+
+Testaan myöhemmin kattavammin ja useammilla labyrinteillä.
+
+
+-----------------------------------------------------
+(Viikko 4 palautus)
+
 Projekti jakautuu tässä vaiheessa (viikko4) kahteen osaan: tietorakenteisiin ja algoritmeihin. Tietorakenteet ovat melko staattisia,
 ja niiden toiminta on testattu. Algoritmit muuttuvat ja jäävät pois vielä niin tiuhaan tahtiin, että niiden testaamisessa ei ole paljon järkeä.
 Kun labyrintin generointi on valmis, sen testaamista voisi tehdä esimerkiksi tarkistamalla, onko sillä ainakin joku reitti. Vastaavasti polunetsintä-

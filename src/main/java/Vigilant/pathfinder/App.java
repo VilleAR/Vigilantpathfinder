@@ -10,50 +10,26 @@ public class App {
     }
 
     public static void main(String[] args) {
-        int maze[][]= new int[10][10];
-        int size = 9;
-        for (int i=0;i<size;i++){
-            for (int j=0;j<size;j++) {
-                if (i%2==0) {
-                    if (j%2==0) {
-                        maze[i][j]=1;
-                    }
-                } else {
-                    if (j%2!=0) {
-                        maze[i][j]=9;
-                    }
-                }
-            }
-        }
-        maze[1][0]=2;
-        maze[2][1]=2;
-        maze[2][3]=2;
-        maze[3][0]=2;
-        maze[3][4]=2;
-        maze[3][8]=2;
-        maze[4][7]=2;
-        maze[5][0]=2;
-        maze[5][6]=2;
-        maze[5][8]=2;
-        maze[6][1]=2;
-        maze[6][3]=2;
-        maze[6][5]=2;
-        maze[7][6]=2;
-        maze[7][8]=2;
-        BFS b = new BFS(maze);
-        DFS d = new DFS(maze);
-        System.out.println(d.search());
-        System.out.println(b.search());
-        /*
-        Primlab prim = new Primlab(9);
+        
+        Primlab prim = new Primlab(999);
+        long t = System.currentTimeMillis();
+        System.out.println("Time at start: "+t);
         prim.createMaze(); //luo labyrintin
-        prim.testFt();
+        long t1=System.currentTimeMillis();
+        System.out.println("Maze generation: "+(t1-t));
+        //prim.testFt();
         int maze[][]=prim.getMaze();
+        long t2=System.currentTimeMillis();
+        System.out.println("Time getMaze() took: "+ (t2-t1));
         BFS bfs = new BFS(maze);
         System.out.println(bfs.search());
+        long t3=System.currentTimeMillis();
+        System.out.println("Time after BFS: "+(t3-t2));
         DFS dfs = new DFS(maze);
         System.out.println(dfs.search());
-*/
+        long t4=System.currentTimeMillis();
+        System.out.println("Time after DFS: "+(t4-t3));
+
          //returnaa labyrintin matriisina
         //DFS dfs = new DFS(maze);
         //System.out.println(dfs.search()); //etsii polun
