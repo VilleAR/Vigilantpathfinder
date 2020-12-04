@@ -1,0 +1,19 @@
+Ohjelman App(=Main) luokka on koodin suorittamista varten, käytännössä toimii käyttöliittymänä. Polunetsintä, tietorakenteet ja generoimisalgoritmit
+on jaettu omiin kansioihinsa. 
+
+
+Työ ei välttämättä ole vertailupainotteinen, mutta siihen sisältyy vertailua. DFS ja BFS ovat molemmat teoriassa O(V+E), mutta käytännössä tähän tarkoitukseen BFS on huonoin mahdollisin algoritmi. Tämän lisäksi
+se käyttää queue-rakennetta, jonka deQueue-funktio (minun työssäni getNext tai getPair) on suurena äärimmäisen raskas verrattuna DFS:n käyttämän stackin pop-funktioon, koska se joutuu joka kerta siirtämään kaikkien muiden queuen alkioiden
+paikkoja. Stackillä poppaaminen on yhtä nopeaa koosta riippumatta. DFS on siis ylivoimainen etenkin suurilla labyrinteillä. Uskon että omat toteutukseni ovat silti O(V+E).
+
+Primin algoritmin aikavaativuus on O(VlogV+ElogV) omasta toteutuksestani en ole aivan varma.
+
+Puutteet:
+(Viikko 6) A-star ja mahdollisesti joku muu etsintäalgoritmi, joku toinen generoimisalgoritmi, mahdollisesti vielä verkkoja (ehkä liikaa työtä) tai lisää muita algoritmejä (ehkä satunnaisen pisteen löytäminen tai joku 
+toinen BFS:lle ystävällisempi tehtävä). Codecov pitäisi saada toimimaan. Rekursiivinen generoimisalgoritmi vaikuttaa hauskalta.
+
+Lähteet:
+https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_implementation
+http://weblog.jamisbuck.org/2011/1/12/maze-generation-recursive-division-algorithm
+http://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm
+https://www.cs.auckland.ac.nz/software/AlgAnim/prim.html
