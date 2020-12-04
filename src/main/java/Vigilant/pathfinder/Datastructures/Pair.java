@@ -23,4 +23,10 @@ public int p1, p2;
             return(false);
         }
     }
+    public int one() {
+        return p1;
+    }
+    public int two() {
+        return p2;
+    }
 }
