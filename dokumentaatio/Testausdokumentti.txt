@@ -8,7 +8,7 @@ Oletuksena on, että jos moves-parametri on oikein, loputkin luokasta toimii hal
 Tämän lisäksi myös Queue-rakenne on testattu sekä integerillä että objektilla. Työn alla olevia luokkia (Astar, Random, Priorityqueue) ei vielä testata.
 Loput tietorakenteista on testattu aiemmin. Primin labyrintin testaaminen on vähän hankalampaa, ja se on tapahtunut enimmäkseen generoimalla lukuisia labyrinttejä ja tutkimalla
 niitä itse. CircleCI ja Codecov on nyt lisätty, mutta Codecov ei tätä kirjoittaessa vielä toimi, koska CircleCIn testit herjaavat kaikista koodin kommenteissa(!) olevista ääkkösistä,
-jolloin Codecov ei tietenkään suostu ottamaan testejä katseltaviksi. Tähän en ole vielä keksinyt ratkaisua, ääkkösten poistaminen kommenteista tekisi koodista vielä vaikeaselkoisempaa.
+jolloin Codecov ei tietenkään suostu ottamaan testejä katseltaviksi. Tähän en ole vielä keksinyt ratkaisua, ääkkösten poistaminen kommenteista tekisi koodista vielä vaikeaselkoisempaa. Olisi pitänyt tehdä englanniksi.
 Codecov-linkki siltä varalta että olen sen korjannut: 
 https://app.codecov.io/gh/VilleAR/Vigilantpathfinder/commits
 
