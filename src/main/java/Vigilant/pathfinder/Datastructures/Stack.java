@@ -32,6 +32,12 @@ public class Stack<T> {
         }
         return (Pair) arr[top--];
     }
+    public Triple tpop() {
+        if(top==0) {
+            System.out.println("Stack is empty");
+        }
+        return (Triple) arr[top--];
+    }
     public T peek() {
         return (T) arr[top];
     }

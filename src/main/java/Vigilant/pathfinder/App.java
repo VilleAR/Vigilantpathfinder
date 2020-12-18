@@ -10,8 +10,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        
-        Primlab prim = new Primlab(999);
+        /*
+        Primlab prim = new Primlab(150);
         long t = System.currentTimeMillis();
         System.out.println("Time at start: "+t);
         prim.createMaze(); //luo labyrintin
@@ -24,15 +24,23 @@ public class App {
         BFS bfs = new BFS(maze);
         System.out.println(bfs.search());
         long t3=System.currentTimeMillis();
-        System.out.println("Time after BFS: "+(t3-t2));
+        System.out.println("Time spent for BFS: "+(t3-t2));
         DFS dfs = new DFS(maze);
         System.out.println(dfs.search());
         long t4=System.currentTimeMillis();
-        System.out.println("Time after DFS: "+(t4-t3));
-
+        System.out.println("Time spent for DFS: "+(t4-t3));
+        Astar astar= new Astar(maze);
+        System.out.println(astar.search());
+        long t5=System.currentTimeMillis();
+        System.out.println("Time spent for Astar: "+(t5-t4));
+        */
+        Primlab prim= new Primlab(9);
+        prim.createMaze();
+        prim.testFt();
+        
          //returnaa labyrintin matriisina
         //DFS dfs = new DFS(maze);
         //System.out.println(dfs.search()); //etsii polun
-        //dfs.testFt(); //tulostaa labyrintin, voisi hyvin k‰ytt‰‰ samaa funktiota primill‰.      
+        //dfs.testFt();     
     }
 }
