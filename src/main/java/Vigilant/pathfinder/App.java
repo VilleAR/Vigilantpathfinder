@@ -4,42 +4,59 @@
 package Vigilant.pathfinder;
 import Vigilant.pathfinder.Datastructures.*;
 import Vigilant.pathfinder.pathfinding.*;
+import java.util.Scanner; //oletettavasti sallittu
 public class App {
     public String getGreeting() {
         return "Hello world!";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {      
+        Scanner sc = new Scanner(System.in);
+        Speedtest st = new Speedtest();
+        System.out.println("Tervetuloa generoimaan");
+        System.out.println("En ole pitkään aikaan kirjoittanut tällaista looppia, joten olkaa armollisia");
+        System.out.println("Ohjelma kaatuu väärillä syötteillä, pahoitteluni");
+        while (true) {
+            System.out.println("Mitä haluat tehdä?");
+            System.out.println("Valitse vaihtoehto antamalla sitä vastaava numero (1-4)");
+            System.out.println("Vaihtoehdot: nopeusvertailu, labyrintin generointi ja katselu, labyrintin generointi ja polunetsintä, lopetus");
+            String s = sc.nextLine();
+            if (s.equals("4")) {
+                break;
+            }
+            System.out.println("Anna sivun pituus labyrintille (suositus alle 500 testaamisessa)"); 
+            String s2=sc.nextLine();                      
+            int i = Integer.parseInt(s2);
+            if (s.equals("1")) {               
+                System.out.println("Kuinka monta kertaa haluat testata? Tulos annetaan keskiarvona.");
+                s2=sc.nextLine();
+                int p = Integer.parseInt(s2);
+                System.out.println("Odota, testeja suoritetaan......");
+                st.test(i, p);
+            } else if (s.equals("2")) {
+                System.out.println("Odota, labyrintti tulostuu.....");
+                Primlab prim=new Primlab(i);
+                prim.createMaze();
+                prim.testFt();
+            } else if (s.equals("3")) {
+                Primlab prim=new Primlab(i);
+                prim.createMaze();
+                int maze[][]=prim.getMaze();
+                System.out.println("Mikä algoritmi? (1:dfs, 2:bfs, 3:a*)");
+                String s3=sc.nextLine();
+                if (s3.equals("1")) {
+                    DFS dfs = new DFS(maze);
+                    System.out.println("DFS löysi polun "+dfs.search()+" siirtymisessä");
+                } else if (s3.equals("2")) {
+                    BFS bfs = new BFS(maze);
+                    System.out.println("BFS löysi polun "+bfs.search()+" siirtymisessä");
+                } else if (s3.equals("3")) {
+                    Astar a=new Astar(maze);
+                    System.out.println("A* löysi polun "+a.search()+" siirtymisessä");
+                }
+            }
+            System.out.println("-----------------------");
+        }    
         
-        Primlab prim = new Primlab(300);
-        long t = System.currentTimeMillis();
-        System.out.println("Time at start: "+t);
-        prim.createMaze(); //luo labyrintin
-        long t1=System.currentTimeMillis();
-        System.out.println("Maze generation: "+(t1-t));
-        //prim.testFt();
-        int maze[][]=prim.getMaze();
-        long t2=System.currentTimeMillis();
-        System.out.println("Time getMaze() took: "+ (t2-t1));
-        BFS bfs = new BFS(maze);
-        System.out.println(bfs.search());
-        long t3=System.currentTimeMillis();
-        System.out.println("Time spent for BFS: "+(t3-t2));
-        DFS dfs = new DFS(maze);
-        System.out.println(dfs.search());
-        long t4=System.currentTimeMillis();
-        System.out.println("Time spent for DFS: "+(t4-t3));
-        Astar astar= new Astar(maze);
-        System.out.println(astar.search());
-        long t5=System.currentTimeMillis();
-        System.out.println("Time spent for Astar: "+(t5-t4));
-
-
-        
-        
-         //returnaa labyrintin matriisina
-        //DFS dfs = new DFS(maze);
-        //System.out.println(dfs.search()); //etsii polun
-        //dfs.testFt();     
     }
 }

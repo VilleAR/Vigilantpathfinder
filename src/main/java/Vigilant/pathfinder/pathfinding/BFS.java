@@ -52,7 +52,7 @@ public class BFS {
             moves++;
             if (current.equals(end)) {
                 v++;
-                System.out.println("BFS found path in " + moves + " moves. It did its best.");
+              //  System.out.println("BFS found path in " + moves + " moves. It did its best.");
                 break;
             }
             getPaths(current);  //etsimme solmun yhteydet 

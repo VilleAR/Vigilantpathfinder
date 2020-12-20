@@ -194,7 +194,7 @@ public class DstTest {
     @Test
     public void astarTest() { //sama kuin yllä, paitsi A-star
         Astar astar= new Astar(maze);
-        assertEquals(14, astar.search());
+        assertEquals(14, astar.search()); //ei ole epähuomio, vaan a* tekee saman verran siirtymisiä kuin DFS k.o. labyrintille
     }
     @Test
     public void bfsTest() {

@@ -4,6 +4,7 @@ BFS:n Queue-rakenne on korjattu olemaan O(1) kaikille funktioille. Se ei nyt ole
 Kävi ilmi että liian suurien taulukoiden antaminen hidasti algoritmejä melko huomattavasti vaikka ylimääräistä tilaa ei käytetty lainkaan eikä sitä ikinä tarvinnut iteroida.
 Syystä en ole aivan varma, mutta joka tapauksessa asia on korjattu ja algoritmit ovat nyt nopeampia.
 A-starista on kerrottu enemmän loppuraportissa, mutta se käyttää heurestiikkana etäisyyttä maaliin ja sen lisäämisoperaatio tapahtuu ajassa O(n) ja seuraavan alkion ottaminen ajassa O(1).
+Muista viikon 6 jälkeisistä totetutuksista on myös kerrottu paremmin itse loppuraportissa.
 
 
 ----------------------------------
@@ -13,7 +14,7 @@ on jaettu omiin kansioihinsa.
 
 Työ ei välttämättä ole vertailupainotteinen, mutta siihen sisältyy vertailua. DFS ja BFS ovat molemmat teoriassa O(V+E), mutta käytännössä tähän tarkoitukseen BFS on huonoin mahdollisin algoritmi. Tämän lisäksi
 se käyttää queue-rakennetta, jonka deQueue-funktio (minun työssäni getNext tai getPair) on suurena äärimmäisen raskas verrattuna DFS:n käyttämän stackin pop-funktioon, koska se joutuu joka kerta siirtämään kaikkien muiden queuen alkioiden
-paikkoja. Stackillä poppaaminen on yhtä nopeaa koosta riippumatta. DFS on siis ylivoimainen etenkin suurilla labyrinteillä. Uskon että omat toteutukseni ovat silti O(V+E).
+paikkoja. Stackillä poppaaminen on yhtä nopeaa koosta riippumatta. DFS on siis ylivoimainen etenkin suurilla labyrinteillä. Uskon että omat toteutukseni ovat silti O(V+E). <---BFS ei tosiaan ollut viikolla 6 O(V+E), vaan Queuen korjaaminen nopeutti sitä astronomisesti.
 
 Primin algoritmin aikavaativuus on O(VlogV+ElogV) omasta toteutuksestani en ole aivan varma.
 

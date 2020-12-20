@@ -15,7 +15,9 @@ plugins {
 }
 apply plugin: 'jacoco'
 
-
+run{
+    standardInput = System.in
+}
 
 repositories {
     // Use jcenter for resolving dependencies.

@@ -23,3 +23,6 @@ Teen kuitenkin mieluummin muutaman asian hyvin kuin monta asiaa kehnosti, mikä 
 Halusin valita opettavan aiheen, ja onnistuinkin siinä hyvin. Labyrinttien generointi oli ehdottomasti suurin haaste ja siksi myös opettavaisin, mutta muutenkin tietorakenteiden implementointi itse antoi aivan uudenlaista
 perspektiiviä ohjelmointiin. Aina voisi tehdä paremmin, mutta olen melko tyytyväinen lopputulokseen. Hannu sanoi että työtä voi tehdä sunnuntai-iltaan asti, joten en ole varma ehtiikö toinen labyrintingeneroimismenetelmäni mukaan loppupalautukseen,
 mutta toivon että saan sen tehtyä mukaan ajoissa. 
+
+Primin algoritmi varmistaa, että kaikkiin solumihin on polku kaikista muista solmuista. Tämän takia olisi myös hyvin helppo tehdä labyrinttejä, joiden alku- ja loppupisteet eivät ole ennalta asetettu tai joissa pitää kulkea tiettyjen pisteiden kautta.
+DFS:n ja A-starin implementointi näille jälkimmäisille labyrinteille olisi ollut hyvin kiinnostavaa, mutta myös melko haasteellista. Loppujen lopuksi aikaa ei valitettavasti ole äärettömästi. 

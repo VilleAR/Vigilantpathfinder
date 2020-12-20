@@ -57,7 +57,7 @@ public class Astar {
             //lp.add(current);
             moves++;
             if (current.equals(end)) {
-                System.out.println("A* found path in " + moves + " moves. Hopefully faster than the others or something is wrong!");
+               // System.out.println("A* found path in " + moves + " moves. Hopefully faster than the others or something is wrong!");
                 break;
             }
             getPaths(current);  //etsimme solmun yhteydet 

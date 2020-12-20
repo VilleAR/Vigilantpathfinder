@@ -1,0 +1,29 @@
+Tässä dokumentissa vertailen algoritmien sekä labyrintin generoimisen nopeuksia ja puhun tuloksista. Vertailu on tehty speedtest-luokalla, joka toimii
+generoimalla annetun kokoisen labyrintin (neliön, mutta toteuttamani algoritmi pystyisi myös muihin suorakulmioihin) ja etsimällä sille jonkin ratkaisun BFS:llä, DFS:llä ja A-starilla.
+Näiden algoritmien viemä aika ja siirrot kirjataan ylös. Tämä toistetaan niin monta kertaa kuin haluamme, minkä jälkeen keskiarvot lasketaan ja ilmoitetaan. Speedtestin ottamat parametrit ovat siis 
+labyrintin koko ja testien määrä. Kannattaa aloittaa pienehköillä (<100) labyrinteillä, jos haluaa välttyä pitkiltä odotuksilta. Esim. 999-kokoisen labyrintin generoimiseen ja testaamiseen menee noin 22 sekuntia.
+
+Alla olevat tulokset on generoitu parametreillä 400, 100, eli generoimalla 400x400-kokoinen labyrintti Primin algoritmillä 100 kertaa ja etsimällä siitä reitit:
+***************************************************
+Labyrintin generoimiseen meni keskimaarin 1146.37ms.
+BFS:lla kesti keskimaarin 11.84ms
+BFS:lla meni keskimaarin 159992.25 siirtymista
+DFS:lla kesti keskimaarin 5.16ms
+DFS:lla meni keskimaarin 67703.9 siirtymista
+Astarilla kesti keskimaarin 5.44ms
+Astarilla meni keskimaarin 55308.14 sirtymista
+****************************************************
+Labyrinttien hyvin satunnaisen rakenteen takia on tärkeää, että niitä generoidaan runsas määrä. Tämä tietenkin rajoittaa labyrinttien kokoa, mutta ainakin saamme melko tarkkoja tuloksia.
+400, 100 -parametrien testaus kesti omalla koneellani 2 minuuttia.
+
+Kuten aiemmin on todettu, BFS on tähän touhuun huonoin mahdollinen algoritmi Primin algoritmin luomien labyrinttien rakenteen vuoksi. On melkein taattua, että oikea polku on pisin, joten BFS:n haarautuva rakenne
+ei tuo muuta kuin haittaa. Se pysyy kuitenkin jotenkuten mukana siksi, että sen operaatiot ovat O(1) ajassa.
+
+DFS nauttii siitä, että tiedämme mihin suuntaan haluamme yleisesti liikkua. Se on koodattu priorisoimaan ensin oikealle ja sitten alas vieviä polkuja, mikä nopeuttaa sitä suunnattomasti esim. satunnaiseen jatkamiseen verrattuna.
+Vaikka lähtö- ja loppupiste olisivat satunnaisia, voisimme silti aina stackiin lisäämisen yhteydessä katsoa, mikä suunta on "paras" esim. laskemalla nykyisen pisteen ja maalin koordinaattien erotukset (x1-x2, y1-y2) ja ottamalla niistä 
+itseisarvot, joiden perusteella jatkosolmut laitettaisiin stackiin. Tällä samalla filosofialla voisimme myös ehkä hieman nopeuttaa tämänhetkistä toteutusta.
+DFS:n operaatiot ovat myös O(1) ajassa ja se löytää reitin paljon vähemmillä siirtymisillä BFS:ään verrattuna, minkä takia se on tietenkin myös selvästi nopeampi.
+
+A* käyttää keskimäärin vähiten siirtymisiä, mutta ei aivan hirveän paljon vähempää kuin DFS. Senkin reitinhaku menee usein pieleen labyrintin umpikujien takia. Se käyttää keskimäärin DFS:ää enemmän aikaa reitinhakuun vaikka tekeekin
+vähemmän siirtymisiä, koska se joutuu käyttämään hitaampaa Tstack (käytännössä priority queue, mutta optimoitu tähän käyttöön)-tietorakennetta, minkä pop-operaatio on O(1) ajassa mutta push-operaatio on O(n) ajassa, tosin käytännössä paljon nopeampi. Vertailu ei ole tässä aivan täydellinen; push-operaation
+voisi toteuttaa minimikeolla O(log n) ajassa. Työni on siis tästä kohtaa epätäydellinen. Ei siis voi varmasti sanoa, että DFS olisi keskimäärin nopein näistä kolmesta algoritmistä.

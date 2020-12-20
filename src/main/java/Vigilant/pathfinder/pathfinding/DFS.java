@@ -58,7 +58,7 @@ public class DFS {
             moves++;
             if (current.equals(end)) {
                 v++;
-                System.out.println("DFS found path in " + moves + " moves. Not bad! (Unless this number is very high)");
+               // System.out.println("DFS found path in " + moves + " moves. Not bad! (Unless this number is very high)");
                 break;
             }
             getPaths(current);  //etsimme solmun yhteydet 
