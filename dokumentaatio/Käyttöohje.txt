@@ -1,5 +1,9 @@
 jar-tiedosto build/libs kansiossa
 
+Luokista:
+Reclab.javasta ei ole mitään iloa
+Dst.java on alussa tekemääni koodia, voi katsoa huvin vuoksi mutta sitä ei käytetty lopputuloksessa ollenkaan
+Muut luokat ovat käytössä, useimmat aika "optimoituja" eli niissä on vain tarvittavat funktionaalisuudet. Generoimisalgoritmit ovat pääkansiossa, tietorakenteet ja polunetsinnät omissaan.
 Ohjelman pitäisi toimia .jar pakettina, mutta minulla on ollut sen kanssa vaikeuksia. Ainakin kloonaamalla pitäisi toimia.
 Gradle run aloittaa tekstipohjaisen käyttöliittymän, jossa voi tehdä nopeustestejä erikokoisille labyrinteille, tulostaa generoituja
 labyrinttejä sekä luoda annetun kokoisen labyrintin ja löytää sille jokin reitti valitulla algoritmillä.
