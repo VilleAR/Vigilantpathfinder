@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Vigilant.pathfinder.Datastructures;
-import java.util.Random; //tilapäinen
+import Vigilant.pathfinder.Datastructures.*; //tilapäinen
 /**
  *
  * @author panda
@@ -52,7 +52,7 @@ public class List<T> {
         if (size==1) {
             return 0;
         } else {
-            return r.nextInt(size-1);
+            return r.getRand(size-1);
         }
         
     }

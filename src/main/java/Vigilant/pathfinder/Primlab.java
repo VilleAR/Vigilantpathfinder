@@ -7,6 +7,7 @@ package Vigilant.pathfinder;
 import Vigilant.pathfinder.Datastructures.Stack;
 import Vigilant.pathfinder.Datastructures.Pair;
 import Vigilant.pathfinder.Datastructures.List;
+import Vigilant.pathfinder.Datastructures.Random;
 /**
  *
  * @author panda
@@ -119,31 +120,33 @@ public int max;
     public List findWalls(List<Pair> l, Pair c) { //lisää walls-listaan solun viereiset seinät
         if (c.p1>0) {
             Pair p = new Pair(c.p1-1,c.p2);
-            if (!l.contains(p)) {
+            if (vis[c.p1-1][c.p2]==false) {
                 l.add(p);
-            }          
+                vis[c.p1-1][c.p2]=true;
+            }    
         }
         if (c.p1<size-1) {
             Pair p = new Pair(c.p1+1, c.p2);
-            if (!l.contains(p)) {
+            if (vis[c.p1+1][c.p2]==false) {
                 l.add(p);
-            } 
+                vis[c.p1+1][c.p2]=true;
+            }    
         }
         if (c.p2>0) {
             Pair p=new Pair(c.p1, c.p2-1);
-            if (!l.contains(p)) {
+            if (vis[c.p1][c.p2-1]==false) {
                 l.add(p);
-            } 
+                vis[c.p1][c.p2-1]=true;
+            }    
         }
         if (c.p2<size-1) {
             Pair p = new Pair(c.p1, c.p2+1);
-            if (!l.contains(p)) {
+            if (vis[c.p1][c.p2+1]==false) {
                 l.add(p);
-            } 
+                vis[c.p1][c.p2+1]=true;
+            }    
         }
-        if (l.size>max) {
-            max=l.size;
-        }
+        
         return l;
     }
     public int[][] getMaze() { //palauttaa labyrintin matriisina

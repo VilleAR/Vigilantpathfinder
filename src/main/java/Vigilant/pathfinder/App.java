@@ -10,8 +10,8 @@ public class App {
     }
 
     public static void main(String[] args) {
-        /*
-        Primlab prim = new Primlab(150);
+        
+        Primlab prim = new Primlab(999);
         long t = System.currentTimeMillis();
         System.out.println("Time at start: "+t);
         prim.createMaze(); //luo labyrintin
@@ -33,7 +33,8 @@ public class App {
         System.out.println(astar.search());
         long t5=System.currentTimeMillis();
         System.out.println("Time spent for Astar: "+(t5-t4));
-        */
+
+        /*
         Random r = new Random();
         int arr[]=new int[2000];
         for (int i=0;i<999999;i++) {
@@ -43,6 +44,7 @@ public class App {
         for (int j=1900;j<2000;j++) {
             System.out.println(arr[j]);
         }
+        */
         
         
          //returnaa labyrintin matriisina
