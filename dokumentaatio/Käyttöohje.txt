@@ -1,3 +1,5 @@
+jar-tiedosto build/libs kansiossa
+
 Ohjelman pitäisi toimia .jar pakettina, mutta minulla on ollut sen kanssa vaikeuksia. Ainakin kloonaamalla pitäisi toimia.
 Gradle run aloittaa tekstipohjaisen käyttöliittymän, jossa voi tehdä nopeustestejä erikokoisille labyrinteille, tulostaa generoituja
 labyrinttejä sekä luoda annetun kokoisen labyrintin ja löytää sille jokin reitti valitulla algoritmillä.
