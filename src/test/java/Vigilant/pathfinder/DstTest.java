@@ -18,7 +18,21 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
+//Random-luokan testaaminen ei onnistu unit-testeillä, mutta testasin sen app-luokassa seuraavasti:
+/*
+        Random r = new Random();
+        int arr[]=new int[20000];
+        for (int i=0;i<999999;i++) {
+            int w = r.getRand(20000);
+            arr[w]++;
+        }
+        for (int j=1900;j<2000;j++) {
+            System.out.println(arr[j]);
+        }
+*/
+//tässä siis alustetaan 20,000:n kokoinen taulukko ja annetaan sille 999,999 satunnaista lukua väliltä 0-19,999. kokeilin samaa myös pienemmillä taulukoilla ja eri kohdista taulukkoa,
+//ja tuloksena oli aina oikean näköisiä lukuja (esim. tässä tapauksessa oletuksena on, että jokaista lukua esiintyy noin 50 kertaa, mikä on totta). 999x999 labyrintti vaatii enintään
+//noin 13,500 alkion kokoisen taulukon, joten tämän random-funktion pitäisi varmasti toimia myös vähän isommille taulukoille
 public class DstTest {
     Dst dst;
     Dst dst2;
@@ -154,11 +168,33 @@ public class DstTest {
         ls.add(stak);
         assertEquals(1, ls.get(1).pop());
     }   
+    @Test
+    public void tstackTest() {
+        Tstack tstack=new Tstack(5);
+        Triple t1=new Triple(0,1,2);
+        Triple t2=new Triple(4,5,7);
+        Triple t3=new Triple (9,9,0);
+        Triple t4=new Triple(3,5,4);
+        tstack.push(t1);
+        tstack.push(t2);
+        tstack.push(t3);
+        tstack.push(t4);
+        assertEquals(0, tstack.pop().p3); //kaikki tässä annetut p3-arvot ovat uniikkeja, joten oikeellisuuden voi tarkistaa näinkin helposti
+        assertEquals(2, tstack.pop().p3);
+        assertEquals(4, tstack.pop().p3);
+        assertEquals(7, tstack.pop().p3);
+        assertEquals(0, tstack.size());
+    }
     
     @Test   
     public void dfsTest() { //teemme manuaalisesti labyrintin, mistä tiedämme kuinka monta liikettä DFS tarvitsee sen ratkaisemiseen
         DFS dfs = new DFS(maze); //labyrintti on siirretty setuppiin
         assertEquals(14, dfs.search()); //piirsin labyrintin käsin ja tarkistin, kuinka monta siirtymistä DFS ja BFS tekisivät.
+    }
+    @Test
+    public void astarTest() { //sama kuin yllä, paitsi A-star
+        Astar astar= new Astar(maze);
+        assertEquals(14, astar.search());
     }
     @Test
     public void bfsTest() {

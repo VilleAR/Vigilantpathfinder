@@ -12,11 +12,11 @@ package Vigilant.pathfinder.Datastructures;
 //hyv‰t ideat tulevat tarpeeseen
 
 public class Random {
-    
+    //hyv‰ idea:
     public int getRand(int x) {
         long t = System.nanoTime()/100;
         long q = t%x;
-        int a = (int)q;
-        return a;
+        int a = (int)q; 
+        return a; //voisi ehk‰ vain returnata (int) q aiemmalla rivill‰ mutta pelaan varman p‰‰lle
     }
 }

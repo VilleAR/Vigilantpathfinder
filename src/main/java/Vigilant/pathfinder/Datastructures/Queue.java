@@ -15,30 +15,21 @@ public class Queue<T> {
     public Queue(int s) {       
         arr=new Object[s];
         this.arr=arr;
-        this.front=front;
-        this.rear=rear;
+        this.front=s-1;
+        this.rear=s-1;
     }
     public void add(T t) {
-        arr[rear++]=t;
+        arr[rear--]=t;
         
     }
     public Object getNext() {
-        Object t = arr[front];
-        
-        for (int i=0;i<rear;i++) {
-            arr[i]=arr[i+1];
-        }
-        arr[rear]=0;
-        rear--;
+        Object t = arr[front--];
+
         return t;      
     }
     public Pair getPair() {
-        Pair p = (Pair) arr[front];
-        for (int i=0;i<rear;i++) {
-            arr[i]=arr[i+1];
-        }
-        arr[rear]=0;
-        rear--;
+        Pair p = (Pair) arr[front--];
+
         return p;
     }
     public boolean isEmpty() {

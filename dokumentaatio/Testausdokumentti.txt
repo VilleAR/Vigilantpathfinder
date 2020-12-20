@@ -1,4 +1,14 @@
 
+Loppupalautus:
+
+Randomin testaus on kuvattu DstTest-tiedostossa ennen muita testejä, koska sitä ei oikein voi yksikkötestata näkemättä melko paljon turhaa vaivaa.
+A-starin testaus on tehty aivan kuten DFS:n, ja Triple-rakennetta en katsonut tarpeelliseksi testata sen äärimmäisen yksinkertaisuuden vuoksi.
+Tstack on testattu samoin kuten muutkin tietorakenteet.
+
+Työhön sisältyy algoritmien nopeusvertailua, josta lisää vertailudokumentissa!!!
+
+
+---------------------------------------------------------------------------------------------
 Viikko 6:
 
 DFS ja BFS on testattu tekemällä käsin labyrintti. Piirsin labyrintin ensiksi käsin ja simuloin siihen BFS:n ja DFS:n toimintaa, ja vertasin testeissä ohjelmien antamia

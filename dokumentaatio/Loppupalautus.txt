@@ -1,0 +1,25 @@
+Lopullinen palautus 
+
+Isoimmat muutokset viikon 6 palautuksesta ovat uusi etsintäalgoritmi A-star ja sen vaatimat tietorakenteet Triple ja Tstack, sekä muutokset Primlabiin ja Randomin sisältyminen.
+Triple on vain kolmen numeron sarja (A-starissa solmun koordinaatit ja etäisyys maalista, laskettu pythagoraan lauseella) ja Tstack on Triple-olioille tehty
+priority stack (käytännössä sama kuin priority queue mutta käytetään stackin tavoin), jossa lyhyin etäisyyden maalista omaava solmu on aina korkeimpana.
+Tstackin aikavaativuus lisäämiselle on O(n), mutta käytännössä se on yleensä paljon kevyempi, koska se etsii sopivaa paikkaa uudelle alkiolle huipusta alkaen,
+ja koska A-star menee (melkein) aina maalia päin geometrisesti, uusi alkio on todennäköisesti jossain listan etupäädyssä, tai ainakin voimme sanoa, että vanhimmat alkiot
+ovat todennäköisesti huonoimmat. Lisäämisen voisi toteuttaa myös log(n) ajassa minimikeolla, mutta päätin sen sijaan keskittyä muihin korjauksiin ennen loppua. Parannettavaa siis vielä olisi.
+Tstackin pop-funktio toimii O(1) ajassa.
+
+Primlabin käytyjen solmujen tarkistus tapahtui edelleen listan contains-funktiolla, joten muutin sen käyttämään siihen boolean taulukkoa kuten BFS, DFS ja A-star. Tämä nopeutti labyrintin generoimisen ainakin kolmikertaiseksi.
+Random-funktio on nyt tehty itse. Toteutus on hyvin yksinkertainen. Tarvitsen aina numeron väliltä 0-x, ja satunnaisen tällaisen numeron löytämiseksi minun tarvitsee vain ottaa System.nanoTime()n ja x:n jakojäännös. Huolena oli,
+että tämä ei tuottaisi täysin satunnaisia numeroita suurella x:n arvoilla (10000+), mutta testit osoittivat, että luvut hajautuvat erittäin tasaisesti juuri niin, kuin niiden tulisikin. Vaikka random ei toimisikaan täydellisesti,
+haitta ei olisi hirveän suuri kunhan se toimisi jotenkin, mutta tietenkin on hyvä että se toimii kunnolla. Lisätietoja testauksesta itse testiluokassa.
+
+Myös BFS:n nopeus parani Queue-rakenteen parantelun jälkeen. Queuen add-funktio oli aiemmin O(n), mutta nyt O(1). Koska en laiskuuttani tehnyt sille samaa autonomisesti kasvavaa funktionaalisuutta kuin List-rakenteelle, sille täytyy
+antaa paljon tilaa heti, jotta se ei lopu. Tämä ei kuitenkaan ole ongelma, koska tiedämme aina suurimman mahdollisen koon jonka se voi vaatia laskemalla solmujen kokonaismäärän.
+
+Itse työstä:
+
+Pääsin oppimaan ja tekemään juuri niitä asioita, joita toivoinkin. Projektin alkuperäinen scope oli aivan absurdi, joten kaikkiin alkuperäisiin odotuksiin ei ylletty.
+Teen kuitenkin mieluummin muutaman asian hyvin kuin monta asiaa kehnosti, mikä oli mielestäni myös kurssin tarkoituksena. Työni on silti melko laaja, sillä sehän on kahden aihe-ehdotuksen yhdistelmä.
+Halusin valita opettavan aiheen, ja onnistuinkin siinä hyvin. Labyrinttien generointi oli ehdottomasti suurin haaste ja siksi myös opettavaisin, mutta muutenkin tietorakenteiden implementointi itse antoi aivan uudenlaista
+perspektiiviä ohjelmointiin. Aina voisi tehdä paremmin, mutta olen melko tyytyväinen lopputulokseen. Hannu sanoi että työtä voi tehdä sunnuntai-iltaan asti, joten en ole varma ehtiikö toinen labyrintingeneroimismenetelmäni mukaan loppupalautukseen,
+mutta toivon että saan sen tehtyä mukaan ajoissa. 
