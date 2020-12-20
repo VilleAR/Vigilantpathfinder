@@ -58,16 +58,21 @@ public class Sidewinder {
                 int z=r.getRand(v)+1; //liikumme eteenp‰in rivill‰
                 
                 t=t+z;
-                if (t*2+1>smaze[0].length) {
+                if (t*2>=smaze[0].length) {
                     smaze[i][smaze[0].length-2]=0;
                 } else {
                     smaze[i][t*2+1]=0;
                 }
                 
                 v=t-o; //poistamme katon
-                z=r.getRand(v); //otamme satunnaisen katon ylemp‰n‰ m‰‰ritellylt‰ v‰lilt‰mme ja avaamme sen
-                int tz=o+z;
-                smaze[i-1][tz*2]=2;
+                if (t>n) {
+                    smaze[i-1][n]=2;
+                } else {
+                    z=r.getRand(v)+1; //otamme satunnaisen katon ylemp‰n‰ m‰‰ritellylt‰ v‰lilt‰mme ja avaamme sen
+                    int tz=o+z;
+                    smaze[i-1][tz*2]=2;
+                }
+                
                 
             }
             t=1; //vainoluuloinen reset, t‰ysin turha

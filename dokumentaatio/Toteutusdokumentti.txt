@@ -27,3 +27,4 @@ https://en.wikipedia.org/wiki/Maze_generation_algorithm#Recursive_implementation
 http://weblog.jamisbuck.org/2011/1/12/maze-generation-recursive-division-algorithm
 http://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm
 https://www.cs.auckland.ac.nz/software/AlgAnim/prim.html
+https://weblog.jamisbuck.org/2011/2/3/maze-generation-sidewinder-algorithm

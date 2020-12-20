@@ -54,3 +54,37 @@ Astarilla meni keskimaarin 354.7077 sirtymista
 ***********************************************
 Näiden tulosten voidaan olettaa olevan hyvin tarkkoja. Kuten voisi odottaa, A* löytää reitin aina hieman DFS:ää nopeammin, ja näin pienellä labyrintillä (30x30) sen hitaammat operaatiot eivät verota sitä niin paljoa, että DFS ohittaisi sen nopeudessa.
 BFS laahaa perällä, kuten aina.
+
+
+
+
+Sidewinder:
+
+Sidewinder ei ole riittävän monimutkainen algoritmi polunetsijöiden merkittävää nopeusvertailuihin, mutta sillä vertailu on silti mielenkiintoista ja ehkä myös opettavaa.
+Seuraavat arvot on saatu parametreillä 200, 100 (eli 200x200 labyrintti 100 kertaa):
+***************************************************
+Labyrintin generoimiseen meni keskimaarin 0.43ms.
+BFS:lla kesti keskimaarin 2.47ms
+BFS:lla meni keskimaarin 37827.5 siirtymista
+DFS:lla kesti keskimaarin 1.33ms
+DFS:lla meni keskimaarin 22122.27 siirtymista
+Astarilla kesti keskimaarin 2.62ms
+Astarilla meni keskimaarin 30728.61 sirtymista
+***************************************************
+Generoiminen tapahtuu paljon Primin algoritmiä nopeammin, ja reitit löytyvät suunnilleen samassa ajassa. DFS on ylivoimainen, kuten odottaa saattaa, koska tämä algoritmi
+tekee paljon "kuiluja" oikealle puolelle labyrinttiä ja DFS-toteutukseni pyrkii aina menemään oikealle, kun pystyy. Tämä saattaa olla jopa alas pyrkimistä parempi tällä algoritmillä.
+A-star kärsii Sidewinderin rakenteesta suuresti, todennäköisesti eniten juuri oikealle puolelle painottumisesta, eli se varmaankin lähtee alas liian aikaisin.
+
+Sidewinderin voisi todennäköisesti tuhota sille räätälöidyllä algoritmillä melko helposti, mutta sen testaaminen näillä yleisimmillä algoritmillä ei ole täysin turhaa, jos tilanne on esim.
+että ratkaistava labyrintti voi tulla monelta eri algoritmiltä. Kiinnostuksen vuoksi testasin vielä Primin algoritmiä samoilla parametreillä (200, 100):
+***************************************************
+Labyrintin generoimiseen meni keskimaarin 106.91ms.
+BFS:lla kesti keskimaarin 2.59ms
+BFS:lla meni keskimaarin 39992.96 siirtymista
+DFS:lla kesti keskimaarin 1.18ms
+DFS:lla meni keskimaarin 18553.7 siirtymista
+Astarilla kesti keskimaarin 1.56ms
+Astarilla meni keskimaarin 14847.84 sirtymista
+***************************************************
+Kuten näemme, suurimmat erot ovat generoimisajassa ja A-starin tehokkuudessa. Sidewinder pystyy siis tekemään paljon nopeammin suuria labyrinttejä rakenteesta kärsimällä, koska sen ei tarvitse
+käydä läheskään jokaisessa solmussa. Primin paremmat labyrintit myös suosivat yleisesti parempaa A-staria hieman, tai enemmänkin eivät erityisesti haittaa sen toimintaa.

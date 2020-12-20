@@ -56,7 +56,7 @@ public class App {
                     System.out.println("A* löysi polun "+a.search()+" siirtymisessä");
                 }
             } else if (s.equals("4")) {
-                System.out.println("1: Sidewinder-labyrintin generointi ja katselu, 2: Sidewinder-labyrintin nopeusvertailu HUOM:nopeusvertailu ei toimi yhtä hyvin kuin Primin algoritmillä");
+                System.out.println("1: Sidewinder-labyrintin generointi ja katselu, 2: Sidewinder-labyrintin nopeusvertailu");
                 String w=sc.nextLine();
                 if (w.equals("1")) {
                     Sidewinder side = new Sidewinder(i);

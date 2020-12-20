@@ -19,3 +19,6 @@ HUOM: Sidewinder-algoritmi ei toimi vielä kunnolla, ja suuret labyrintit luovat
 
 update:nopeusvertailu toimii jotenkuten muille paitsi BFS:lle, jonka queue menee reilusti yli kapasiteetin jostain syystä. Hyvin moni näistä labyrinteistä päätyy umpikujaan,
 mutta silloinkin algoritmit kilpailevat nopeudessa, joten nekään eivät ole täysin turhia.
+
+update: Sidewinder toimii täysin, vika oli muutamasta merkistä kiinni (kuten aina). Generoin 200x200 labyrintin 100 kertaa, ja niille löytyi aina ratkaisu. Myös BFS:n outo Queue-tilaongelma
+ratkesi samalla. Nopeusvertailu siis toimii myös.

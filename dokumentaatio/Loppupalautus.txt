@@ -14,7 +14,7 @@ että tämä ei tuottaisi täysin satunnaisia numeroita suurella x:n arvoilla (1
 haitta ei olisi hirveän suuri kunhan se toimisi jotenkin, mutta tietenkin on hyvä että se toimii kunnolla. Lisätietoja testauksesta itse testiluokassa.
 
 Myös BFS:n nopeus parani Queue-rakenteen parantelun jälkeen. Queuen add-funktio oli aiemmin O(n), mutta nyt O(1). Koska en laiskuuttani tehnyt sille samaa autonomisesti kasvavaa funktionaalisuutta kuin List-rakenteelle, sille täytyy
-antaa paljon tilaa heti, jotta se ei lopu. Tämä ei kuitenkaan ole ongelma, koska tiedämme aina suurimman mahdollisen koon jonka se voi vaatia laskemalla solmujen kokonaismäärän.
+antaa paljon tilaa heti, jotta se ei lopu. Tämä ei kuitenkaan ole ongelma, koska tiedämme aina suurimman mahdollisen koon jonka se voi vaatia laskemalla solmujen kokonaismäärän, ja tämä koko ei onneksi ole hirveän tila-ahne.
 
 Itse työstä:
 
@@ -24,11 +24,11 @@ Halusin valita opettavan aiheen, ja onnistuinkin siinä hyvin. Labyrinttien gene
 perspektiiviä ohjelmointiin. Aina voisi tehdä paremmin, mutta olen melko tyytyväinen lopputulokseen. Hannu sanoi että työtä voi tehdä sunnuntai-iltaan asti, joten en ole varma ehtiikö toinen labyrintingeneroimismenetelmäni mukaan loppupalautukseen,
 mutta toivon että saan sen tehtyä mukaan ajoissa. 
 
-Primin algoritmi varmistaa, että kaikkiin solumihin on polku kaikista muista solmuista. Tämän takia olisi myös hyvin helppo tehdä labyrinttejä, joiden alku- ja loppupisteet eivät ole ennalta asetettu tai joissa pitää kulkea tiettyjen pisteiden kautta.
+Primin algoritmi varmistaa, että kaikkiin solmuihin on polku kaikista muista solmuista. Tämän takia olisi myös hyvin helppo tehdä labyrinttejä, joiden alku- ja loppupisteet eivät ole ennalta asetettu tai joissa pitää kulkea tiettyjen pisteiden kautta.
 DFS:n ja A-starin implementointi näille jälkimmäisille labyrinteille olisi ollut hyvin kiinnostavaa, mutta myös melko haasteellista. Loppujen lopuksi aikaa ei valitettavasti ole äärettömästi. 
 
 Codecov ei edelleenkään toimi, koska CircleCI ei hyväksy edes kommentoituja ääkkösiä. Päätin mieluummin pitää kommentit mahdollisimman selvinä, joten valitettavasti Codecov jäi nyt pois. Iso osa projektista oli kuitenkin sellaista, jota ei yksikkötesteillä
-voi testata, joten se ei hirveän paljon mieltä masenna.
+voi testata, joten tämä ei hirveän paljon mieltä masenna.
 
 (Klo 23 sunnuntaina): Sain tehtyä Sidewinder- generoimisalgoritmin, joka on Primiä yksinkertaisempi ja ns. triviaali algoritmi, eli siinä pääsee maaliin aina, jos menee alhaalta ylöspäin. Tämän takia se ei oikein sovellu algoritmien vertailuun, mutta yksi tavoitteistani oli
-toteuttaa monta generoimisalgoritmiä ja se on nyt täytetty.
+toteuttaa monta generoimisalgoritmiä ja se on nyt täytetty. Tämän myötä voin sanoa, että olen tyytyväinen työhöni. Rekursiivinen jakava algoritmi jäi ehkä vielä vähän kaivelemaan.
