@@ -60,6 +60,7 @@ public class Sidewinder {
                 smaze[i][t*2]=0;
                 
             }
+            t=0;
             i++; //tässä käymme läpi vain joka toisen rivin
             
         }    
