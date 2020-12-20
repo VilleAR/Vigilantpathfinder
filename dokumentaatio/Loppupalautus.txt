@@ -29,3 +29,6 @@ DFS:n ja A-starin implementointi näille jälkimmäisille labyrinteille olisi ol
 
 Codecov ei edelleenkään toimi, koska CircleCI ei hyväksy edes kommentoituja ääkkösiä. Päätin mieluummin pitää kommentit mahdollisimman selvinä, joten valitettavasti Codecov jäi nyt pois. Iso osa projektista oli kuitenkin sellaista, jota ei yksikkötesteillä
 voi testata, joten se ei hirveän paljon mieltä masenna.
+
+(Klo 23 sunnuntaina): Sain tehtyä Sidewinder- generoimisalgoritmin, joka on Primiä yksinkertaisempi ja ns. triviaali algoritmi, eli siinä pääsee maaliin aina, jos menee alhaalta ylöspäin. Tämän takia se ei oikein sovellu algoritmien vertailuun, mutta yksi tavoitteistani oli
+toteuttaa monta generoimisalgoritmiä ja se on nyt täytetty.

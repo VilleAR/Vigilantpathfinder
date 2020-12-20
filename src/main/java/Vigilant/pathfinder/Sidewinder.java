@@ -39,7 +39,7 @@ public class Sidewinder {
                         smaze[i][j]=9;
                     }
                 }
-                if(smaze[i][j]==0) {
+                if(smaze[i][j]==0&&i%2==0) {
                     smaze[i][j]=2;
                 }
                 
@@ -52,18 +52,36 @@ public class Sidewinder {
         
         for (int i=2;i<smaze[0].length;i++) { //jokaisella solmurivill‰ otamme satunnaisen pisteen, johon laitamme sein‰n
             int t = 1; //t‰ll‰ muuttujalla "etenemme" rivill‰ ja lis‰‰mme seini‰ ja koloja kattoon
-            while (t<n-1) {
+            while (t<n) {
                 int v = n-t;
+                int o=t;
                 int z=r.getRand(v)+1; //liikumme eteenp‰in rivill‰
-                System.out.println(z);
+                
                 t=t+z;
-                smaze[i][t*2]=0;
+                if (t*2+1>smaze[0].length) {
+                    smaze[i][smaze[0].length-2]=0;
+                } else {
+                    smaze[i][t*2+1]=0;
+                }
+                
+                v=t-o; //poistamme katon
+                z=r.getRand(v); //otamme satunnaisen katon ylemp‰n‰ m‰‰ritellylt‰ v‰lilt‰mme ja avaamme sen
+                int tz=o+z;
+                smaze[i-1][tz*2]=2;
                 
             }
-            t=0;
+            t=1; //vainoluuloinen reset, t‰ysin turha
             i++; //t‰ss‰ k‰ymme l‰pi vain joka toisen rivin
             
         }    
+        for (int i=0;i<smaze[0].length;i++) {
+            if (i%2!=0) {
+                smaze[smaze[0].length-2][i]=2;
+            }
+        }
+    }
+    public int[][]getMaze() {
+        return smaze;
     }
     
     public void testFt() { // tulostaa labyrintin

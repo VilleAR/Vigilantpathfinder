@@ -9,3 +9,6 @@ Labyrintti tulostuu hieman omalaatuisen näköisenä. Sitä voi lukea seuraavast
 Esim 5x5 labyrintti tulostetaan siis 9x9 matriisina esteiden havainnollistamisen takia.
 
 Labyrintit alkavat vasemmasta ylänurkasta ja loppuvat oikeaan alanurkkaan!
+
+HUOM: Sidewinder-algoritmi ei toimi vielä kunnolla, ja suuret labyrintit luovat todennäköisesti umpikujia. Sen nopeusvertailu ei siis vielä kirjoitushetkellä
+(23:18) toimi. Sidewinder on ns. "basic"-algoritmi, joten polunetsintäalgoritmien vertailu siihen ei ole niin tähdellistä.

@@ -12,7 +12,6 @@ public class App {
 
     public static void main(String[] args) {      
         
-        
         Scanner sc = new Scanner(System.in);
         Speedtest st = new Speedtest();
         System.out.println("Tervetuloa generoimaan");
@@ -21,9 +20,9 @@ public class App {
         while (true) {
             System.out.println("Mitä haluat tehdä?");
             System.out.println("Valitse vaihtoehto antamalla sitä vastaava numero (1-4)");
-            System.out.println("Vaihtoehdot: nopeusvertailu, labyrintin generointi ja katselu, labyrintin generointi ja polunetsintä, lopetus");
+            System.out.println("Vaihtoehdot: nopeusvertailu, labyrintin generointi ja katselu, labyrintin generointi ja polunetsintä, Sidewinder-labyrintti, lopetus");
             String s = sc.nextLine();
-            if (s.equals("4")) {
+            if (s.equals("5")) {
                 break;
             }
             System.out.println("Anna sivun pituus labyrintille (suositus alle 500 testaamisessa)"); 
@@ -55,6 +54,20 @@ public class App {
                 } else if (s3.equals("3")) {
                     Astar a=new Astar(maze);
                     System.out.println("A* löysi polun "+a.search()+" siirtymisessä");
+                }
+            } else if (s.equals("4")) {
+                System.out.println("1: Sidewinder-labyrintin generointi ja katselu, 2: Sidewinder-labyrintin nopeusvertailu HUOM:nopeusvertailu ei toimi (mutta muuten hyvä)");
+                String w=sc.nextLine();
+                if (w.equals("1")) {
+                    Sidewinder side = new Sidewinder(i);
+                    side.createMaze();
+                    side.testFt();
+                } else if (w.equals("2")) {
+                    System.out.println("Kuinka monta kertaa haluat testata? Tulos annetaan keskiarvona");
+                    String w2=sc.nextLine();
+                    int r=Integer.parseInt(w2);
+                    System.out.println("Odota, testeja suoritetaan............");
+                    st.sideWinderTest(i,r);
                 }
             }
             System.out.println("-----------------------");
