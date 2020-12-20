@@ -19,6 +19,9 @@ public class Queue<T> {
         this.rear=s-1;
     }
     public void add(T t) {
+        if (rear==0) {
+            System.out.println("!!!!!!!!");
+        }
         arr[rear--]=t;
         
     }

@@ -76,25 +76,26 @@ public class Speedtest {
             //prim.testFt();
             int maze[][]=side.getMaze();
             long t2=System.currentTimeMillis();
-            BFS bfs = new BFS(maze);
+            /*BFS bfs = new BFS(maze);
             int q = bfs.search();
             bfsmoves=bfsmoves+q;
             long t3=System.currentTimeMillis();
             bfstime=bfstime+(t3-t2);
+*/
             DFS dfs = new DFS(maze);
-            q=dfs.search();
+            long q=dfs.search();
             dfsmoves=dfsmoves+q;
-            long t4=System.currentTimeMillis();
-            dfstime=dfstime+(t4-t3);
+            long t3=System.currentTimeMillis();
+            dfstime=dfstime+(t3-t2);
             Astar astar= new Astar(maze);
             q=astar.search();
             astarmoves=astarmoves+q;
-            long t5=System.currentTimeMillis();
-            astartime=astartime+(t5-t4);
+            long t4=System.currentTimeMillis();
+            astartime=astartime+(t4-t3);
         }
         System.out.println("Labyrintin generoimiseen meni keskimaarin "+(gentime/count)+"ms.");
-        System.out.println("BFS:lla kesti keskimaarin "+(bfstime/count)+"ms");
-        System.out.println("BFS:lla meni keskimaarin "+(bfsmoves/count)+" siirtymista");
+      //  System.out.println("BFS:lla kesti keskimaarin "+(bfstime/count)+"ms");
+       // System.out.println("BFS:lla meni keskimaarin "+(bfsmoves/count)+" siirtymista");
         System.out.println("DFS:lla kesti keskimaarin "+(dfstime/count)+"ms");
         System.out.println("DFS:lla meni keskimaarin "+(dfsmoves/count)+" siirtymista");
         System.out.println("Astarilla kesti keskimaarin "+(astartime/count)+"ms");

@@ -16,3 +16,6 @@ Labyrintit alkavat vasemmasta ylänurkasta ja loppuvat oikeaan alanurkkaan!
 
 HUOM: Sidewinder-algoritmi ei toimi vielä kunnolla, ja suuret labyrintit luovat todennäköisesti umpikujia. Sen nopeusvertailu ei siis vielä kirjoitushetkellä
 (23:18) toimi. Sidewinder on ns. "basic"-algoritmi, joten polunetsintäalgoritmien vertailu siihen ei ole niin tähdellistä.
+
+update:nopeusvertailu toimii jotenkuten muille paitsi BFS:lle, jonka queue menee reilusti yli kapasiteetin jostain syystä. Hyvin moni näistä labyrinteistä päätyy umpikujaan,
+mutta silloinkin algoritmit kilpailevat nopeudessa, joten nekään eivät ole täysin turhia.
