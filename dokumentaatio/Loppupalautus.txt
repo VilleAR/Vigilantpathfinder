@@ -26,3 +26,6 @@ mutta toivon että saan sen tehtyä mukaan ajoissa.
 
 Primin algoritmi varmistaa, että kaikkiin solumihin on polku kaikista muista solmuista. Tämän takia olisi myös hyvin helppo tehdä labyrinttejä, joiden alku- ja loppupisteet eivät ole ennalta asetettu tai joissa pitää kulkea tiettyjen pisteiden kautta.
 DFS:n ja A-starin implementointi näille jälkimmäisille labyrinteille olisi ollut hyvin kiinnostavaa, mutta myös melko haasteellista. Loppujen lopuksi aikaa ei valitettavasti ole äärettömästi. 
+
+Codecov ei edelleenkään toimi, koska CircleCI ei hyväksy edes kommentoituja ääkkösiä. Päätin mieluummin pitää kommentit mahdollisimman selvinä, joten valitettavasti Codecov jäi nyt pois. Iso osa projektista oli kuitenkin sellaista, jota ei yksikkötesteillä
+voi testata, joten se ei hirveän paljon mieltä masenna.
