@@ -34,9 +34,16 @@ public class App {
         long t5=System.currentTimeMillis();
         System.out.println("Time spent for Astar: "+(t5-t4));
         */
-        Primlab prim= new Primlab(9);
-        prim.createMaze();
-        prim.testFt();
+        Random r = new Random();
+        int arr[]=new int[2000];
+        for (int i=0;i<999999;i++) {
+            int w = r.getRand(2000);
+            arr[w]++;
+        }
+        for (int j=1900;j<2000;j++) {
+            System.out.println(arr[j]);
+        }
+        
         
          //returnaa labyrintin matriisina
         //DFS dfs = new DFS(maze);

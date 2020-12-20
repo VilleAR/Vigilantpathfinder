@@ -10,20 +10,13 @@ package Vigilant.pathfinder.Datastructures;
  * @author panda
  */
 //hyvät ideat tulevat tarpeeseen
-//onko random tietorakenne vai ei? ei taida olla
+
 public class Random {
     
-    public long getRand(int x) {
-        long t=System.currentTimeMillis();
-        
-        if (x<10) {
-            long b = t%10;
-            if (b<x) {
-                return (int) b;
-            } else {
-                return 10-b;
-            }
-        }
-        return t;
+    public int getRand(int x) {
+        long t = System.nanoTime()/100;
+        long q = t%x;
+        int a = (int)q;
+        return a;
     }
 }

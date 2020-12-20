@@ -18,14 +18,15 @@ private int arr[];
 public int maze[][];
 private int size; 
 private boolean vis[][];
+public int max;
     public Primlab(int size) {
         this.size=size;
         int adjsize=size*2-1; //kasvatamme labyrintin kokoa, jotta saamme sein‰t v‰liin
         int maze[][]=new int[adjsize+1][adjsize+1];
         boolean vis[][]=new boolean[adjsize+1][adjsize+1];
         this.vis=vis;
-        this.maze=maze;
-        
+        this.maze=maze;        
+        this.max=max;
     }
     public void createMaze() {
         //0 on sein‰, 1 on solmu, 2 on avoin polku solmujen v‰liss‰ (eli ei sein‰‰), 9 on tilaa jota ei oikeasti ole olemassa (eli ei polkua)
@@ -107,11 +108,12 @@ private boolean vis[][];
                     walls=findWalls(walls,current);
                 }  
             }
+            
             vis[current.p1][current.p2]=true;
           //  System.out.println(current.p1+", "+current.p2);
           //  System.out.println(walls.size);
           
-            
+             
         }
     }
     public List findWalls(List<Pair> l, Pair c) { //lis‰‰ walls-listaan solun viereiset sein‰t
@@ -138,6 +140,9 @@ private boolean vis[][];
             if (!l.contains(p)) {
                 l.add(p);
             } 
+        }
+        if (l.size>max) {
+            max=l.size;
         }
         return l;
     }
