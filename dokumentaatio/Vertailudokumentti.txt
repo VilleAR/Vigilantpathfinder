@@ -27,3 +27,30 @@ DFS:n operaatiot ovat myös O(1) ajassa ja se löytää reitin paljon vähemmill
 A* käyttää keskimäärin vähiten siirtymisiä, mutta ei aivan hirveän paljon vähempää kuin DFS. Senkin reitinhaku menee usein pieleen labyrintin umpikujien takia. Se käyttää keskimäärin DFS:ää enemmän aikaa reitinhakuun vaikka tekeekin
 vähemmän siirtymisiä, koska se joutuu käyttämään hitaampaa Tstack (käytännössä priority queue, mutta optimoitu tähän käyttöön)-tietorakennetta, minkä pop-operaatio on O(1) ajassa mutta push-operaatio on O(n) ajassa, tosin käytännössä paljon nopeampi. Vertailu ei ole tässä aivan täydellinen; push-operaation
 voisi toteuttaa minimikeolla O(log n) ajassa. Työni on siis tästä kohtaa epätäydellinen. Ei siis voi varmasti sanoa, että DFS olisi keskimäärin nopein näistä kolmesta algoritmistä.
+
+Seuraavat tulokset on saatu parametreillä 700, 30:
+*****************************************************
+Labyrintin generoimiseen meni keskimaarin 4845.966ms.
+BFS:lla kesti keskimaarin 32.3ms
+BFS:lla meni keskimaarin 489990.9333 siirtymista
+DFS:lla kesti keskimaarin 31.9333ms
+DFS:lla meni keskimaarin 228776.6333 siirtymista
+Astarilla kesti keskimaarin 17.6ms
+Astarilla meni keskimaarin 134900.8333 sirtymista
+
+*****************************************************
+Tätä suurempien labyrinttien vertailu tulee aika hankalaksi, koska jo 700x700 labyrintti vie noin 5 sekuntia per testikerta. Tässä A-star on vetänyt selvästi muita edelle ja DFS on jostain syystä yhtä hidas kuin BFS.
+30:lla testikerralla on vaikeaa sanoa, onko A* tosiaan näin paljon parempi suuremmissa labyrinteissä, vai onko kyse vain epäonnekkaista generoinneista DFS:lle. Kannattaa siis varata runsaasti aikaa näin suurien labyrinttien testaamiseen.
+
+Seuraavat tulokset on saatu parametreillä 30, 10000:
+***********************************************
+Labyrintin generoimiseen meni keskimaarin 0.4087ms.
+BFS:lla kesti keskimaarin 0.0417ms
+BFS:lla meni keskimaarin 896.4695 siirtymista
+DFS:lla kesti keskimaarin 0.023ms
+DFS:lla meni keskimaarin 429.8633 siirtymista
+Astarilla kesti keskimaarin 0.0214ms
+Astarilla meni keskimaarin 354.7077 sirtymista
+***********************************************
+Näiden tulosten voidaan olettaa olevan hyvin tarkkoja. Kuten voisi odottaa, A* löytää reitin aina hieman DFS:ää nopeammin, ja näin pienellä labyrintillä (30x30) sen hitaammat operaatiot eivät verota sitä niin paljoa, että DFS ohittaisi sen nopeudessa.
+BFS laahaa perällä, kuten aina.
