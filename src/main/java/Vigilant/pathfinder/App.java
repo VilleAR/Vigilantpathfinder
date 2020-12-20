@@ -11,6 +11,11 @@ public class App {
     }
 
     public static void main(String[] args) {      
+        Sidewinder side=new Sidewinder(7);
+        Random r = new Random();
+        side.createMaze();
+        side.testFt();
+        /*
         Scanner sc = new Scanner(System.in);
         Speedtest st = new Speedtest();
         System.out.println("Tervetuloa generoimaan");
@@ -56,7 +61,8 @@ public class App {
                 }
             }
             System.out.println("-----------------------");
+
         }    
-        
+        */
     }
 }

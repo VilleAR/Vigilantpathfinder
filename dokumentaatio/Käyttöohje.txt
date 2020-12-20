@@ -7,3 +7,5 @@ labyrinttejä sekä luoda annetun kokoisen labyrintin ja löytää sille jokin r
 Labyrintti tulostuu hieman omalaatuisen näköisenä. Sitä voi lukea seuraavasti:
 1 on siis solmu, 2 on polkua, 0 estettä ja 9 "filler"-tilaa, jota ei oikeasti ole olemassa mutta jota tarvitaan labyrintin esittämiseen matriisina.
 Esim 5x5 labyrintti tulostetaan siis 9x9 matriisina esteiden havainnollistamisen takia.
+
+Labyrintit alkavat vasemmasta ylänurkasta ja loppuvat oikeaan alanurkkaan!

@@ -36,9 +36,15 @@ public class Reclab {
                         remaze[i][j]=9;
                     }
                 }
+                if(remaze[i][j]==0) {
+                    remaze[i][j]=2;
+                }
             }
         }
         
+    }
+    public int[][]getMaze() {
+        return remaze;
     }
     
     
