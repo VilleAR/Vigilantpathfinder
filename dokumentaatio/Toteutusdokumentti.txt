@@ -16,7 +16,7 @@ Työ ei välttämättä ole vertailupainotteinen, mutta siihen sisältyy vertail
 se käyttää queue-rakennetta, jonka deQueue-funktio (minun työssäni getNext tai getPair) on suurena äärimmäisen raskas verrattuna DFS:n käyttämän stackin pop-funktioon, koska se joutuu joka kerta siirtämään kaikkien muiden queuen alkioiden
 paikkoja. Stackillä poppaaminen on yhtä nopeaa koosta riippumatta. DFS on siis ylivoimainen etenkin suurilla labyrinteillä. Uskon että omat toteutukseni ovat silti O(V+E). <---BFS ei tosiaan ollut viikolla 6 O(V+E), vaan Queuen korjaaminen nopeutti sitä astronomisesti.
 
-Primin algoritmin aikavaativuus on O(VlogV+ElogV) omasta toteutuksestani en ole aivan varma.
+Primin algoritmin aikavaativuus on O(VlogV+ElogV), oma toteutukseni pitäisi pystyä samaan.
 
 Puutteet:
 (Viikko 6) A-star ja mahdollisesti joku muu etsintäalgoritmi, joku toinen generoimisalgoritmi, mahdollisesti vielä verkkoja (ehkä liikaa työtä) tai lisää muita algoritmejä (ehkä satunnaisen pisteen löytäminen tai joku 
@@ -28,3 +28,6 @@ http://weblog.jamisbuck.org/2011/1/12/maze-generation-recursive-division-algorit
 http://weblog.jamisbuck.org/2011/1/10/maze-generation-prim-s-algorithm
 https://www.cs.auckland.ac.nz/software/AlgAnim/prim.html
 https://weblog.jamisbuck.org/2011/2/3/maze-generation-sidewinder-algorithm
+
+Vaikka jamisbuckin blogissa onkin pythonilla tehtyjä malliesimerkkejä, käytin niitä vain konseptien sisäistämiseen ja en perehtynyt malliratkaisuihin. Tämä on todennäköisesti melko itsestäänselvää koodistani, hyvällä ja huonolla tavalla. Olen melko tyytyväinen lopputuloksestani
+joten en halua tästä väärinkäsitystä.
