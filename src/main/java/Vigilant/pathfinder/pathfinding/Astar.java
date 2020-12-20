@@ -23,10 +23,10 @@ public class Astar {
     private int size;
     
     public Astar(int[][] maze) {
-        moves=0;
-        stack = new Tstack(10000000); //mahdolliset vierailtavat solmut
+        moves=0;     
         this.maze=maze;
         int n = maze[0].length-1;
+        stack = new Tstack((n+1)*(n+1)); //mahdolliset vierailtavat solmut
         boolean visited[][] = new boolean[n+1][n+1]; //k‰yt‰mme boolean matriisia pit‰m‰‰n kirjaa k‰ydyist‰ solmuista,
         this.visited=visited;
     }

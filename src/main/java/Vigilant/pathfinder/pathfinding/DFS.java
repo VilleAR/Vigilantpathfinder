@@ -23,10 +23,10 @@ public class DFS {
     private int size;
     
     public DFS(int[][] maze) {
-        moves=0;
-        stack = new Stack(10000000); //mahdolliset vierailtavat solmut
+        moves=0;      
         this.maze=maze;
         int n = maze[0].length-1;
+        stack = new Stack(n*n); //mahdolliset vierailtavat solmut
         boolean visited[][] = new boolean[n+1][n+1]; //k‰yt‰mme boolean matriisia pit‰m‰‰n kirjaa k‰ydyist‰ solmuista, paljon nopeampi kuin aiempi ratkaisu (aiempi ratkaisu oli hyvin huono)
         this.visited=visited;
     }

@@ -1,3 +1,12 @@
+Loppupalautus:
+
+BFS:n Queue-rakenne on korjattu olemaan O(1) kaikille funktioille. Se ei nyt ole paljon muita hitaampi, mutta käyttää edelleen eniten siirtymisiä reitin löytämiseen.
+Kävi ilmi että liian suurien taulukoiden antaminen hidasti algoritmejä melko huomattavasti vaikka ylimääräistä tilaa ei käytetty lainkaan eikä sitä ikinä tarvinnut iteroida.
+Syystä en ole aivan varma, mutta joka tapauksessa asia on korjattu ja algoritmit ovat nyt nopeampia.
+A-starista on kerrottu enemmän loppuraportissa, mutta se käyttää heurestiikkana etäisyyttä maaliin ja sen lisäämisoperaatio tapahtuu ajassa O(n) ja seuraavan alkion ottaminen ajassa O(1).
+
+
+----------------------------------
 Ohjelman App(=Main) luokka on koodin suorittamista varten, käytännössä toimii käyttöliittymänä. Polunetsintä, tietorakenteet ja generoimisalgoritmit
 on jaettu omiin kansioihinsa. 
 

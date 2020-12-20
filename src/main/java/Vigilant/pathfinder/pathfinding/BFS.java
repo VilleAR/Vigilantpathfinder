@@ -16,9 +16,9 @@ public class BFS {
     private boolean visited[][];
     
     public BFS(int maze[][]) {
-        moves=0;
-        queue=new Queue(100000000);
+        moves=0;      
         int n = maze[0].length;
+        queue=new Queue(n*n);
         this.moves=moves;
         this.maze=maze;
         boolean visited[][] = new boolean[n][n];
